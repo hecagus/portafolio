@@ -1,6 +1,4 @@
-/* ======================== */
-/* 1. Estilos Globales y PrimeFlex */
-/* ======================== */
+/* VARIABLES DE COLOR */
 :root {
     /* Puedes cambiar este color a tu gusto */
     --primary-color: #007bff; /* Azul, para botones y barras de progreso */
@@ -121,6 +119,41 @@ body {
 
 .header__info li:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para el Dropdown de Portafolio (MÓVIL) */
+.portfolio-dropdown {
+    position: relative; /* Importante para que el submenú se posicione */
+    padding: 0; /* Quitamos el padding del li principal para que lo tenga el span */
+}
+
+.portfolio-dropdown .dropdown-toggle {
+    display: block;
+    padding: 1rem 0;
+    /* Mismo padding que otros <li> */
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.submenu {
+    max-height: 0; /* Inicialmente oculto */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #343a40; /* Fondo más oscuro para submenú */
+    width: 100%;
+    border-top: none;
+}
+
+.submenu li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #ced4da;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.submenu li:hover {
+    background-color: #495057;
 }
 
 /* Estilos para los botones (Contratame, Descargar CV, etc.) */
@@ -330,15 +363,60 @@ footer .social__mediaIcons {
     }
 
     .header__info li {
-        padding: 0 0.5rem;
+        padding: 0;
         border-bottom: none;
         color: var(--text-color);
         font-size: 1rem;
+        position: relative; /* Para el dropdown en desktop */
     }
 
     .header__info li:hover {
         background-color: transparent;
         color: var(--primary-color);
+    }
+
+    .portfolio-dropdown {
+        padding: 0; /* Asegura que el li principal no tenga padding vertical */
+    }
+    
+    .portfolio-dropdown .dropdown-toggle {
+        padding: 0 0.5rem;
+        /* El padding estándar de los <li> normales */
+        font-size: 1rem;
+        color: var(--text-color);
+    }
+    
+    .portfolio-dropdown:hover .dropdown-toggle {
+        color: var(--primary-color);
+    }
+
+    /* Estilos para el Dropdown de Portafolio (ESCRITORIO) */
+    .submenu {
+        position: absolute;
+        top: 100%; /* Justo debajo del li principal */
+        left: 0;
+        min-width: 200px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        max-height: 0; /* Oculto por defecto, ahora se usa para la animación */
+        overflow: hidden;
+        border-top: 3px solid var(--primary-color);
+    }
+    
+    .portfolio-dropdown:hover .submenu {
+        max-height: 500px; /* Suficientemente grande para mostrar todos los elementos */
+    }
+
+    .submenu li {
+        padding: 0.5rem 1rem;
+        color: var(--text-color);
+        border-bottom: none;
+        text-align: left;
+    }
+    
+    .submenu li:hover {
+        background-color: var(--secondary-color);
     }
 
     /* Portfolio: Tarjetas de proyecto */
