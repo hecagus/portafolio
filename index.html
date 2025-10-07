@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Description" content="Template portafolio desarrollador UI/UX " />
+    <meta name="Description" content="Portafolio de desarrollador web JR | UI/UX y Proyectos web." />
     <title>Portafolio</title>
     <link rel="stylesheet" href="index.css" />
 
@@ -32,7 +32,17 @@
                 <ul class="flex flex-column xl:flex-row list-none">
                     <li onclick="scrollToSection('about')">Sobre mí</li>
                     <li onclick="scrollToSection('services')">Servicios</li>
-                    <li onclick="scrollToSection('portfolio')">Portafolio</li>
+                    <li class="portfolio-dropdown">
+                        <span class="dropdown-toggle" onclick="toggleSubmenu(event)">Portafolio <i class="fa-solid fa-angle-down"></i></span>
+                        <ul class="submenu list-none">
+                            <li onclick="scrollToSection('portfolio', true)">Todos los Proyectos</li>
+                            <li onclick="scrollToFilter('encripta')">Encriptador de texto</li>
+                            <li onclick="scrollToFilter('tours__Web')">Barbería HecAgus</li>
+                            <li onclick="scrollToFilter('world__Tours')">Inmobiliaria web</li>
+                            <li onclick="scrollToFilter('e__commerce')">E-commerce</li>
+                            <li onclick="scrollToFilter('tours__Web', true)">Panadería Volcanes</li>
+                        </ul>
+                    </li>
                     <li onclick="scrollToSection('contact')">Contacto</li>
                 </ul>
                 <div class="hireMe__button pt-4">
@@ -70,14 +80,9 @@
             <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0">
                 <div class="aboutMe__info col-12 md:col-6 md:pr-6 pt-0">
                     <h1 class="text-3xl md:text-5xl">Sobre mí</h1>
-                    <p class="text-gray-600">Soy estudiante de ingeniería en sistemas computacionales en la Universidad Virtual del Estado de Guanajuato UVEG
-                         y también trabajo en Farmacias del Ahorro. Mi pasión por la tecnología me impulsa a buscar constantemente oportunidades para aprender y
-                          crecer en este campo. Actualmente, estoy ampliando mis conocimientos en tecnología a través de un diplomado en ONE - Oracle Next Education.
-                        A lo largo de mi carrera académica y profesional, he adquirido habilidades en programación, desarrollo de software y administración de sistemas.
-                         Me encanta enfrentar desafíos técnicos y encontrar soluciones innovadoras. Además, me mantengo actualizado con las últimas tendencias y avances
-                          en tecnología, ya que creo en la mejora continua.
-                        Además de mi enfoque en la tecnología, valoro el trabajo en equipo y la colaboración en proyectos desafiantes. Siempre estoy dispuesto a
-                         aprender de mis colegas y estoy emocionado por las oportunidades de crecimiento profesional en el futuro tecnológico.
+                    <p class="text-gray-600">Soy estudiante de ingeniería en sistemas computacionales en la Universidad Virtual del Estado de Guanajuato UVEG. Mi pasión por la tecnología me impulsa a buscar constantemente oportunidades para aprender y crecer en este campo. Actualmente, estoy ampliando mis conocimientos a través de un diplomado en ONE - Oracle Next Education.
+                        A lo largo de mi carrera académica y profesional, he adquirido habilidades en programación, desarrollo de software y administración de sistemas. Me encanta enfrentar desafíos técnicos y encontrar soluciones innovadoras. Además, me mantengo actualizado con las últimas tendencias y avances en tecnología, ya que creo en la mejora continua.
+                        Además de mi enfoque en la tecnología, valoro el trabajo en equipo y la colaboración en proyectos desafiantes. Siempre estoy dispuesto a aprender de mis colegas y estoy emocionado por las oportunidades de crecimiento profesional en el futuro tecnológico.
                         Si deseas conocer más sobre mí o tienes alguna pregunta, no dudes en contactarme.</p>
                     <div class="knowledge flex flex-column gap-3 mt-5">
                         <p> html 100%</p>
@@ -183,7 +188,7 @@
             <div class="portfolio__title flex flex-column gap-3 text-center">
                 <h1 class="text-3xl md:text-5xl">Mi trabajo</h1>
                 <p class="text-gray-400 text-sm md:text-base">
-                    A continuación, te invito a explorar mi portafolio, donde podrás encontrar algunos de los trabajos que he realizado hasta ahora. Este portafolio es un reflejo de mi experiencia y habilidades en el campo de la tecnología. Estoy orgulloso de compartir estos proyectos contigo, ya que representan mi compromiso con la excelencia y mi pasión por encontrar soluciones innovadoras.
+                    A continuación, te invito a explorar mi portafolio, donde podrás encontrar algunos de los trabajos que he realizado hasta ahora. Este portafolio es un reflejo de mi experiencia y habilidades en el campo de la tecnología. Soy orgulloso de compartir estos proyectos contigo, ya que representan mi compromiso con la excelencia y mi pasión por encontrar soluciones innovadoras.
                     Al navegar por mi portafolio, podrás apreciar la diversidad de los proyectos en los que he participado, desde desarrollos de software hasta administración de sistemas. Cada proyecto fue una oportunidad para enfrentar desafíos técnicos y demostrar mi capacidad para adaptarse a diferentes contextos y necesidades.
                     Además, en mi portafolio encontrarás ejemplos de colaboraciones en equipo, donde pude contribuir con mis conocimientos y aprender de mis colegas. Estas experiencias me han permitido crecer profesionalmente y expandir mis horizontes en el mundo de la tecnología.
                     Te invito cordialmente a explorar mi portafolio y conocer más sobre mi trayectoria. Estoy emocionado por las oportunidades futuras y por seguir desafiándome a mí mismo en el campo de la tecnología. Si tienes alguna pregunta o estás interesado en colaborar, no dudes en ponerse en contacto conmigo.
@@ -302,21 +307,4 @@
                 <a href="mailTo:hec17tor@gmail.com"
                     class="cursor-pointer text-center col-4 sm:col-6 xl:col-4 mt-3 no-underline border-round-lg">
                     <span>
-                        <i class="fa-solid fa-message"></i>
-                    </span>Escríbeme
-                </a>
-            </div>
-            <div class="my__services col-12 sm:col-6 sm:p-0 md:col-4 md:pt-2 md:align-items-center flex flex-column justify-content-between">
-                <h3>Mis Servicios</h3>
-                <p>Desarrollo web</p>
-                <p>Desarrollo móvil</p>
-                <p>Diseñador UI /UX</p>
-                <P>Marketing Digital</P>
-            </div>
-        </footer>
-    </div>
-
-</body>
-<script src="index.js"></script>
-
-</html>
+                        <i class="fa-solid
