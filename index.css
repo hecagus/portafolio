@@ -6,6 +6,7 @@
     --primary-color: #007bff; /* Azul, para botones y barras de progreso */
     --secondary-color: #f8f9fa; /* Gris claro */
     --text-color: #495057;
+    --dark-bg: #212529; /* Color para fondo de elementos oscuros, como el menú móvil */
 }
 
 body {
@@ -34,8 +35,98 @@ body {
     object-fit: cover;
 }
 
+/* Estilos para el menú hamburguesa */
+.checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 15px;
+    right: 15px;
+    z-index: 5; /* Asegura que esté por encima de las líneas */
+    opacity: 0; /* Lo hacemos invisible, solo sirve para detectar el clic */
+    cursor: pointer;
+}
+
+.hamburger__lines {
+    display: block; /* Asegura que se vea en móvil */
+    height: 26px;
+    width: 32px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger__lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--text-color);
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* TRANSICIÓN DEL MENÚ HAMBURGUESA */
+.checkbox:checked~.hamburger__lines .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.checkbox:checked~.hamburger__lines .line2 {
+    opacity: 0;
+}
+
+.checkbox:checked~.hamburger__lines .line3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOVIL: El menú se desliza desde la derecha */
+.header__info {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%; /* Ocupa el 80% de la pantalla */
+    height: 100%;
+    background-color: var(--dark-bg); /* Fondo oscuro para el menú */
+    color: white;
+    padding-top: 5rem;
+    transform: translateX(100%); /* Oculto por defecto */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Apila elementos */
+    align-items: center;
+    gap: 2rem;
+}
+
+.checkbox:checked~.header__info {
+    transform: translateX(0); /* Se muestra */
+}
+
+.header__info ul {
+    width: 100%;
+    text-align: center;
+}
+
+.header__info li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: white; /* Texto blanco para fondo oscuro */
+}
+
+.header__info li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Estilos para los botones (Contratame, Descargar CV, etc.) */
-.hireMe__button a, .home__buttons a, .home__buttons button {
+.hireMe__button a,
+.home__buttons a,
+.home__buttons button {
     background-color: var(--primary-color);
     color: white;
     padding: 0.75rem 1.5rem;
@@ -43,10 +134,19 @@ body {
     border: none;
     transition: background-color 0.3s;
     font-weight: bold;
+    display: inline-block; /* Para que el padding funcione bien */
 }
 
-.hireMe__button a:hover, .home__buttons a:hover, .home__buttons button:hover {
+.hireMe__button a:hover,
+.home__buttons a:hover,
+.home__buttons button:hover {
     background-color: #0056b3;
+}
+
+/* Ajuste para el botón de "Contratame" en el menú móvil */
+.header__info .hireMe__button a {
+    width: auto;
+    /* Ajusta el ancho para que no sea 100% y se vea mejor */
 }
 
 
@@ -70,10 +170,24 @@ body {
 }
 
 /* Define el ancho (porcentaje) para cada barra, basado en los porcentajes que pusiste en el HTML */
-.progress__wordpress span { width: 100%; } /* html 100% */
-.progress__html span { width: 75%; } /* css 75% */
-.progress__angular span { width: 80%; } /* JS 80% */
-.progress__reactJs span { width: 95%; } /* React Js 95% */
+.progress__wordpress span {
+    width: 100%;
+}
+
+/* html 100% */
+.progress__html span {
+    width: 75%;
+}
+
+/* css 75% */
+.progress__angular span {
+    width: 80%;
+}
+
+/* JS 80% */
+.progress__reactJs span {
+    width: 95%;
+}
 
 /* ======================== */
 /* 4. PORTFOLIO (Filtros y Tarjetas) */
@@ -94,10 +208,11 @@ body {
     border-color: var(--primary-color);
 }
 
+/* Ajuste para que las tarjetas ocupen todo el ancho en móvil */
 .project__card {
     position: relative;
     overflow: hidden;
-    width: 30%; /* Tamaño base, ajustado por flexbox en el HTML */
+    width: 100%; /* Por defecto, ocupa el 100% en móvil */
     max-width: 380px;
     min-width: 250px;
     height: 250px; /* Altura fija para uniformidad */
@@ -144,12 +259,95 @@ body {
     transform: scale(1.05);
 }
 
+/* Ajuste para el texto del portfolio en móvil */
+.project__info p {
+    display: none; /* Oculta el texto largo en móvil para no sobrecargar la tarjeta */
+}
+
 /* ======================== */
-/* 5. MEDIA QUERIES (Ajustes de Responsividad del Menú) */
+/* 5. FOOTER (Contacto y Servicios) */
 /* ======================== */
-/* Ocultar elementos del menú hamburguesa en desktop */
+footer div {
+    /* Añade espacio entre las secciones apiladas en móvil */
+    margin-bottom: 2rem;
+}
+
+footer .social__mediaIcons {
+    justify-content: start; /* Alinea los íconos a la izquierda en móvil */
+}
+
+/* ======================== */
+/* 6. MEDIA QUERIES (Ajustes de Responsividad en Tablet y Desktop) */
+/* ======================== */
+
+/* Estilos para TABLETS (pantallas mayores a 768px, clase 'md' de PrimeFlex) */
+@media (min-width: 768px) {
+    /* Portfolio: Tarjetas de proyecto */
+    .project__card {
+        width: 48%; /* Dos tarjetas por fila en tablet */
+    }
+
+    /* Footer: Elimina el margen inferior entre las columnas en tablet */
+    footer div {
+        margin-bottom: 0;
+    }
+
+    /* Portfolio: Muestra el texto de la tarjeta otra vez en tablet */
+    .project__info p {
+        display: block;
+    }
+}
+
+
+/* Estilos para DESKTOP (pantallas mayores a 1200px, clase 'xl' de PrimeFlex) */
 @media (min-width: 1200px) {
-    .checkbox, .hamburger__lines {
+
+    /* Ocultar elementos del menú hamburguesa en desktop */
+    .checkbox,
+    .hamburger__lines {
         display: none !important;
+    }
+
+    /* Mostrar la barra de navegación estándar en desktop */
+    .header__info {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        color: var(--text-color);
+        padding-top: 0;
+        transform: translateX(0);
+        box-shadow: none;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .header__info ul {
+        width: auto;
+        text-align: left;
+        flex-direction: row !important;
+        /* Sobreescribe flex-column de móvil */
+    }
+
+    .header__info li {
+        padding: 0 0.5rem;
+        border-bottom: none;
+        color: var(--text-color);
+        font-size: 1rem;
+    }
+
+    .header__info li:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+
+    /* Portfolio: Tarjetas de proyecto */
+    .project__card {
+        width: 30%; /* Tres tarjetas por fila en desktop, como lo tenías */
+    }
+
+    /* Footer: Alineación */
+    footer .social__mediaIcons {
+        justify-content: center; /* Centra los íconos en desktop */
     }
 }
