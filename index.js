@@ -12,7 +12,7 @@ function scrollToSection(id) {
         // Realiza el scroll suave
         section.scrollIntoView({ behavior: 'smooth' });
     }
-    
+
     // Lógica para cerrar el menú hamburguesa después de la navegación en móviles
     const checkbox = document.querySelector('.checkbox');
     // Si la pantalla es pequeña y el checkbox está marcado (menú abierto), lo desmarca.
