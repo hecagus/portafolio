@@ -2,23 +2,22 @@
 /* 1. CONFIGURACIÓN GENERAL Y VARIABLES */
 /* ======================== */
 :root {
-    /* Puedes cambiar este color a tu gusto */
-    --primary-color: #007bff; /* Azul, para botones y barras de progreso */
-    --secondary-color: #f8f9fa; /* Gris claro */
+    --primary-color: #007bff;
+    --secondary-color: #f8f9fa;
     --text-color: #495057;
-    --dark-bg: #212529; /* Color para fondo de elementos oscuros, como el menú móvil */
-    --primary-hover-color: #0056b3; /* Color para el hover de los botones */
+    --dark-bg: #212529;
+    --primary-hover-color: #0056b3;
 }
 
 body {
     font-family: Arial, sans-serif;
     color: var(--text-color);
     margin: 0;
-    padding: 0;
+    padding-top: 67px; /* Añadimos padding para que el contenido no quede oculto bajo el header fijo */
 }
 
 .container {
-    max-width: 1200px; /* Ancho máximo para el contenido */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -27,11 +26,10 @@ body {
 /* 2. HEADER Y NAVEGACIÓN */
 /* ======================== */
 .navbar {
-    background-color: white; /* Color del fondo de la barra de navegación */
+    background-color: white;
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Primeflex 'z-1' es z-index: 1000. Aseguramos que el header esté encima de todo */
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .logo img {
@@ -40,29 +38,24 @@ body {
     object-fit: cover;
 }
 
-
 /* ======================== */
 /* 3. ESTILOS PARA MÓVIL (MENÚ HAMBURGUESA) */
 /* ======================== */
-
-/* Contenedor del checkbox y las líneas (solo visible en móvil) */
 .checkbox, .hamburger__lines {
-    display: block; /* Por defecto se muestran */
+    display: block;
 }
 
-/* El checkbox invisible que controla el estado del menú */
 .checkbox {
     position: absolute;
     height: 32px;
     width: 32px;
     top: 15px;
     right: 15px;
-    z-index: 5; /* Por encima de las líneas */
+    z-index: 5;
     opacity: 0;
     cursor: pointer;
 }
 
-/* Las 3 líneas del icono de hamburguesa */
 .hamburger__lines {
     height: 26px;
     width: 32px;
@@ -84,7 +77,6 @@ body {
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
-/* Animación de las líneas a una 'X' cuando el menú está abierto */
 .checkbox:checked ~ .hamburger__lines .line1 {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -97,7 +89,6 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* El menú que se desliza desde la derecha */
 .header__info {
     position: fixed;
     top: 0;
@@ -106,17 +97,16 @@ body {
     height: 100%;
     background-color: var(--dark-bg);
     padding-top: 5rem;
-    transform: translateX(100%); /* Oculto por defecto */
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    z-index: 999; /* Justo debajo del header fijo */
+    z-index: 999;
 }
 
-/* Muestra el menú cuando el checkbox está activo */
 .checkbox:checked ~ .header__info {
     transform: translateX(0);
 }
@@ -138,7 +128,6 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Dropdown de Portafolio (MÓVIL) */
 .portfolio-dropdown {
     position: relative;
     padding: 0;
@@ -153,7 +142,7 @@ body {
 }
 
 .submenu {
-    max-height: 0; /* Oculto por defecto en móvil */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     background-color: #343a40;
@@ -172,7 +161,51 @@ body {
 }
 
 /* ======================== */
-/* 4. ESTILOS PARA BOTONES Y OTROS ELEMENTOS */
+/* 4. SECCIONES ESPECÍFICAS */
+/* ======================== */
+
+/* --- SECCIÓN SOBRE MÍ (VERSIÓN CORREGIDA) --- */
+.aboutMe__content {
+    position: relative;
+    width: 100%;
+    display: flex; /* Para alinear el contenido de texto */
+    justify-content: flex-start; /* Alinea el texto a la izquierda */
+    align-items: center;
+}
+
+.aboutMe__content > .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.aboutMe__content > .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.08; /* Lo hacemos muy sutil */
+    border-radius: 8px;
+}
+
+.aboutMe__content > .aboutMe__info {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    max-width: 100%; /* Aseguramos que el texto no se desborde */
+}
+
+/* --- GALERÍA DE PROYECTOS (VERSIÓN CORREGIDA) --- */
+.proyect__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* ======================== */
+/* 5. ESTILOS PARA BOTONES Y OTROS ELEMENTOS */
 /* ======================== */
 
 .hireMe__button a,
@@ -185,12 +218,12 @@ body {
     border: none;
     transition: background-color 0.3s, box-shadow 0.3s;
     font-weight: bold;
-    display: inline-block; /* Asegura que el padding se aplique correctamente */
-    border-radius: 8px; /* Bordes redondeados para un look moderno */
+    display: inline-block;
+    border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 
-/* -- MEJORA: Efecto hover y focus para mejor feedback visual -- */
 .hireMe__button a:hover,
 .home__buttons a:hover,
 .home__buttons button:hover,
@@ -198,24 +231,45 @@ body {
 .home__buttons a:focus,
 .home__buttons button:focus {
     background-color: var(--primary-hover-color);
-    outline: none; /* Quita el borde por defecto en el focus */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Agrega un "glow" para accesibilidad */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
-/* ================================================ */
-/* 5. ESTILOS PARA ESCRITORIO (PANTALLAS GRANDES) */
-/* ================================================ */
+/* ======================== */
+/* 6. BARRAS DE PROGRESO */
+/* ======================== */
+.progress__bar {
+    background-color: #e9ecef;
+    border-radius: 1rem;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
 
-/* Usamos una media query. xl: en Primeflex es 1200px. Usaremos ese punto de quiebre. */
+.progress__bar span {
+    display: block;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+}
+
+/* Anchos de las barras de progreso */
+.progress__wordpress span { width: 100%; } /* HTML */
+.progress__html span { width: 75%; }      /* CSS */
+.progress__angular span { width: 80%; }   /* JS */
+.progress__reactJs span { width: 95%; }   /* React Js */
+
+
+/* ================================================ */
+/* 7. ESTILOS PARA ESCRITORIO (PANTALLAS GRANDES) */
+/* ================================================ */
 @media (min-width: 1200px) {
 
-    /* Ocultamos el menú hamburguesa */
     .checkbox,
     .hamburger__lines {
         display: none;
     }
 
-    /* Restauramos el layout normal del header */
     .header__info {
         position: static;
         transform: translateX(0);
@@ -229,17 +283,17 @@ body {
     }
 
     .header__info ul {
-        display: flex; /* Para alinear horizontalmente */
+        display: flex;
         flex-direction: row;
         text-align: left;
-        gap: 2rem; /* Espacio entre "Sobre mí", "Servicios", etc. */
+        gap: 2rem;
     }
 
     .header__info li {
         padding: 0;
         border-bottom: none;
         font-size: 1rem;
-        color: var(--text-color); /* Color de texto normal */
+        color: var(--text-color);
         transition: color 0.2s;
     }
 
@@ -254,30 +308,26 @@ body {
         color: var(--text-color);
     }
 
-    /* Estilos para el Dropdown en DESKTOP */
     .submenu {
         position: absolute;
-        top: 150%; /* Lo posicionamos un poco debajo del texto */
-        left: -1rem; /* Alineamos con el borde izquierdo del texto */
+        top: 150%;
+        left: -1rem;
         background-color: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
         width: 200px;
-        max-height: none; /* Quitamos la restricción de altura */
+        max-height: none;
         overflow: visible;
         padding: 0.5rem 0;
-        
-        /* Lo ocultamos con opacidad y visibilidad para la animación */
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
     }
 
-    /* Mostramos el submenú al pasar el mouse por encima del dropdown */
     .portfolio-dropdown:hover .submenu {
         opacity: 1;
         visibility: visible;
-        top: 100%; /* Lo movemos a su posición final */
+        top: 100%;
     }
     
     .submenu li {
@@ -292,5 +342,18 @@ body {
 
     .submenu li:hover {
         background-color: var(--secondary-color);
+    }
+}
+
+/* Media queries para la galería de proyectos */
+@media (max-width: 992px) {
+    .proyect__gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .proyect__gallery {
+        grid-template-columns: 1fr;
     }
 }
