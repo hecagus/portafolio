@@ -1,15 +1,20 @@
-/* VARIABLES DE COLOR */
+/* ======================== */
+/* 1. CONFIGURACIÓN GENERAL Y VARIABLES */
+/* ======================== */
 :root {
     /* Puedes cambiar este color a tu gusto */
     --primary-color: #007bff; /* Azul, para botones y barras de progreso */
     --secondary-color: #f8f9fa; /* Gris claro */
     --text-color: #495057;
     --dark-bg: #212529; /* Color para fondo de elementos oscuros, como el menú móvil */
+    --primary-hover-color: #0056b3; /* Color para el hover de los botones */
 }
 
 body {
     font-family: Arial, sans-serif;
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -25,6 +30,8 @@ body {
     background-color: white; /* Color del fondo de la barra de navegación */
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Primeflex 'z-1' es z-index: 1000. Aseguramos que el header esté encima de todo */
+    z-index: 1000; 
 }
 
 .logo img {
@@ -33,21 +40,30 @@ body {
     object-fit: cover;
 }
 
-/* Estilos para el menú hamburguesa */
+
+/* ======================== */
+/* 3. ESTILOS PARA MÓVIL (MENÚ HAMBURGUESA) */
+/* ======================== */
+
+/* Contenedor del checkbox y las líneas (solo visible en móvil) */
+.checkbox, .hamburger__lines {
+    display: block; /* Por defecto se muestran */
+}
+
+/* El checkbox invisible que controla el estado del menú */
 .checkbox {
     position: absolute;
-    display: block;
     height: 32px;
     width: 32px;
     top: 15px;
     right: 15px;
-    z-index: 5; /* Asegura que esté por encima de las líneas */
-    opacity: 0; /* Lo hacemos invisible, solo sirve para detectar el clic */
+    z-index: 5; /* Por encima de las líneas */
+    opacity: 0;
     cursor: pointer;
 }
 
+/* Las 3 líneas del icono de hamburguesa */
 .hamburger__lines {
-    display: block; /* Asegura que se vea en móvil */
     height: 26px;
     width: 32px;
     position: absolute;
@@ -68,40 +84,41 @@ body {
     transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
-/* TRANSICIÓN DEL MENÚ HAMBURGUESA */
-.checkbox:checked~.hamburger__lines .line1 {
+/* Animación de las líneas a una 'X' cuando el menú está abierto */
+.checkbox:checked ~ .hamburger__lines .line1 {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-.checkbox:checked~.hamburger__lines .line2 {
+.checkbox:checked ~ .hamburger__lines .line2 {
     opacity: 0;
 }
 
-.checkbox:checked~.hamburger__lines .line3 {
+.checkbox:checked ~ .hamburger__lines .line3 {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* MOVIL: El menú se desliza desde la derecha */
+/* El menú que se desliza desde la derecha */
 .header__info {
     position: fixed;
     top: 0;
     right: 0;
-    width: 80%; /* Ocupa el 80% de la pantalla */
+    width: 80%;
     height: 100%;
-    background-color: var(--dark-bg); /* Fondo oscuro para el menú */
-    color: white;
+    background-color: var(--dark-bg);
     padding-top: 5rem;
     transform: translateX(100%); /* Oculto por defecto */
     transition: transform 0.3s ease-in-out;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column; /* Apila elementos */
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
+    z-index: 999; /* Justo debajo del header fijo */
 }
 
-.checkbox:checked~.header__info {
-    transform: translateX(0); /* Se muestra */
+/* Muestra el menú cuando el checkbox está activo */
+.checkbox:checked ~ .header__info {
+    transform: translateX(0);
 }
 
 .header__info ul {
@@ -114,39 +131,37 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     font-size: 1.25rem;
-    color: white; /* Texto blanco para fondo oscuro */
+    color: white;
 }
 
 .header__info li:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Estilos para el Dropdown de Portafolio (MÓVIL) */
+/* Dropdown de Portafolio (MÓVIL) */
 .portfolio-dropdown {
-    position: relative; /* Importante para que el submenú se posicione */
-    padding: 0; /* Quitamos el padding del li principal para que lo tenga el span */
+    position: relative;
+    padding: 0;
 }
 
 .portfolio-dropdown .dropdown-toggle {
     display: block;
     padding: 1rem 0;
-    /* Mismo padding que otros <li> */
     cursor: pointer;
     font-size: 1.25rem;
     color: white;
 }
 
 .submenu {
-    max-height: 0; /* Inicialmente oculto */
+    max-height: 0; /* Oculto por defecto en móvil */
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-    background-color: #343a40; /* Fondo más oscuro para submenú */
+    background-color: #343a40;
     width: 100%;
-    border-top: none;
 }
 
 .submenu li {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     font-size: 1rem;
     color: #ced4da;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -156,7 +171,10 @@ body {
     background-color: #495057;
 }
 
-/* Estilos para los botones (Contratame, Descargar CV, etc.) */
+/* ======================== */
+/* 4. ESTILOS PARA BOTONES Y OTROS ELEMENTOS */
+/* ======================== */
+
 .hireMe__button a,
 .home__buttons a,
 .home__buttons button {
@@ -165,6 +183,114 @@ body {
     padding: 0.75rem 1.5rem;
     text-align: center;
     border: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
     font-weight: bold;
-    display: inline-block; /* Para que
+    display: inline-block; /* Asegura que el padding se aplique correctamente */
+    border-radius: 8px; /* Bordes redondeados para un look moderno */
+    cursor: pointer;
+}
+
+/* -- MEJORA: Efecto hover y focus para mejor feedback visual -- */
+.hireMe__button a:hover,
+.home__buttons a:hover,
+.home__buttons button:hover,
+.hireMe__button a:focus,
+.home__buttons a:focus,
+.home__buttons button:focus {
+    background-color: var(--primary-hover-color);
+    outline: none; /* Quita el borde por defecto en el focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Agrega un "glow" para accesibilidad */
+}
+
+/* ================================================ */
+/* 5. ESTILOS PARA ESCRITORIO (PANTALLAS GRANDES) */
+/* ================================================ */
+
+/* Usamos una media query. xl: en Primeflex es 1200px. Usaremos ese punto de quiebre. */
+@media (min-width: 1200px) {
+
+    /* Ocultamos el menú hamburguesa */
+    .checkbox,
+    .hamburger__lines {
+        display: none;
+    }
+
+    /* Restauramos el layout normal del header */
+    .header__info {
+        position: static;
+        transform: translateX(0);
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        padding-top: 0;
+        box-shadow: none;
+        z-index: auto;
+    }
+
+    .header__info ul {
+        display: flex; /* Para alinear horizontalmente */
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem; /* Espacio entre "Sobre mí", "Servicios", etc. */
+    }
+
+    .header__info li {
+        padding: 0;
+        border-bottom: none;
+        font-size: 1rem;
+        color: var(--text-color); /* Color de texto normal */
+        transition: color 0.2s;
+    }
+
+    .header__info li:hover {
+        background-color: transparent;
+        color: var(--primary-color);
+    }
+    
+    .portfolio-dropdown .dropdown-toggle {
+        padding: 0;
+        font-size: 1rem;
+        color: var(--text-color);
+    }
+
+    /* Estilos para el Dropdown en DESKTOP */
+    .submenu {
+        position: absolute;
+        top: 150%; /* Lo posicionamos un poco debajo del texto */
+        left: -1rem; /* Alineamos con el borde izquierdo del texto */
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        width: 200px;
+        max-height: none; /* Quitamos la restricción de altura */
+        overflow: visible;
+        padding: 0.5rem 0;
+        
+        /* Lo ocultamos con opacidad y visibilidad para la animación */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
+    }
+
+    /* Mostramos el submenú al pasar el mouse por encima del dropdown */
+    .portfolio-dropdown:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        top: 100%; /* Lo movemos a su posición final */
+    }
+    
+    .submenu li {
+        color: var(--text-color);
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .submenu li:last-child {
+        border-bottom: none;
+    }
+
+    .submenu li:hover {
+        background-color: var(--secondary-color);
+    }
+}
