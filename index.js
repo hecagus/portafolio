@@ -1,131 +1,131 @@
-// Obtener elementos clave del DOM
-const filterContainer = document.querySelector(".gallery__categories");
-const gallery = document.querySelector(".proyect__gallery");
-const projectCards = gallery.querySelectorAll(".project__card");
+document.addEventListener("DOMContentLoaded", () => {
 
-// ==============================================
-// 1. Función para el scroll suave de navegación
-// ==============================================
-/**
- * Desplaza la vista a una sección específica de la página.
- * @param {string} id - El ID de la sección de destino.
- * @param {boolean} [closeSubmenu=false] - Indica si el submenú de escritorio debe cerrarse.
- */
-function scrollToSection(id, closeSubmenu = false) {
-    const section = document.getElementById(id);
-    if (section) {
-        // Cierra el submenú de Portafolio (útil para navegación en escritorio)
-        if (closeSubmenu) {
-            const submenu = document.querySelector('.submenu');
-            if (submenu) {
-                // Para escritorio, se cierra el hover, pero esto asegura el cierre
-                submenu.style.maxHeight = '0';
+    // ==============================================
+    // 1. Navegación y Scroll Suave
+    // ==============================================
+    
+    // Asignar eventos a los enlaces de navegación principal
+    document.querySelectorAll('li[onclick^="scrollToSection"]').forEach(item => {
+        const sectionId = item.getAttribute('onclick').match(/'([^']+)'/)[1];
+        item.addEventListener('click', () => scrollToSection(sectionId));
+    });
+
+    // Asignar evento al botón "Mi trabajo"
+    const workButton = document.querySelector('button[onclick="scrollToSection(\'portfolio\')"]');
+    if (workButton) {
+        workButton.addEventListener('click', () => scrollToSection('portfolio'));
+    }
+
+    /**
+     * Desplaza la vista a una sección específica de la página.
+     * @param {string} id - El ID de la sección de destino.
+     */
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        if (section) {
+            closeMobileMenu(); // Cierra el menú móvil si está abierto
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // ==============================================
+    // 2. Submenú de Portafolio (Móvil y Escritorio)
+    // ==============================================
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const submenu = document.querySelector('.submenu');
+
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', (event) => {
+            // Solo aplica la lógica de toggle en pantallas pequeñas
+            if (window.innerWidth < 1200) {
+                event.stopPropagation(); // Evita que otros clics se disparen
+                if (submenu.style.maxHeight && submenu.style.maxHeight !== '0px') {
+                    submenu.style.maxHeight = '0'; // Ocultar
+                } else {
+                    submenu.style.maxHeight = submenu.scrollHeight + "px"; // Mostrar
+                }
             }
+        });
+    }
+
+    // ==============================================
+    // 3. Lógica de Filtro del Portafolio
+    // ==============================================
+    const filterContainer = document.querySelector(".gallery__categories");
+    const projectCards = document.querySelectorAll(".project__card");
+
+    // Asignar eventos a los filtros del submenú
+    document.querySelectorAll('.submenu li[onclick^="scrollToFilter"]').forEach(item => {
+        const filterValue = item.getAttribute('onclick').match(/'([^']+)'/)[1];
+        item.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevenir comportamiento por defecto
+            
+            // Si el elemento tiene un data-link, ábrelo en una nueva pestaña
+            const link = item.getAttribute('data-link');
+            if (link) {
+                window.open(link, '_blank');
+            }
+
+            scrollToSection('portfolio');
+            filterProjects(filterValue);
+            closeMobileMenu();
+        });
+    });
+
+    // Asignar eventos a los filtros de la barra de categorías
+    if (filterContainer) {
+        filterContainer.addEventListener("click", (event) => {
+            const target = event.target;
+            if (target.tagName === 'LI') {
+                const filterValue = target.getAttribute('data-filter');
+                filterProjects(filterValue);
+            }
+        });
+    }
+
+    /**
+     * Filtra los proyectos en la galería.
+     * @param {string} filterClass - La clase de filtro a aplicar (e.g., 'encripta', 'all').
+     */
+    function filterProjects(filterClass) {
+        projectCards.forEach(card => {
+            const isMatch = filterClass === 'all' || card.classList.contains(filterClass);
+            
+            // *** LA CORRECCIÓN CLAVE ESTÁ AQUÍ ***
+            // Usamos una clase para ocultar, en lugar de cambiar el display
+            if (isMatch) {
+                card.classList.remove('oculto');
+            } else {
+                card.classList.add('oculto');
+            }
+        });
+
+        // Actualiza la clase 'active' en la barra de categorías
+        const activeFilter = filterContainer.querySelector('.active');
+        if (activeFilter) {
+            activeFilter.classList.remove('active');
         }
-        
-        // Cierra el menú hamburguesa móvil si está abierto
+        const newActiveFilter = filterContainer.querySelector(`[data-filter="${filterClass}"]`);
+        if (newActiveFilter) {
+            newActiveFilter.classList.add('active');
+        }
+    }
+
+    // ==============================================
+    // 4. Funciones Auxiliares
+    // ==============================================
+
+    /**
+     * Cierra el menú hamburguesa si está abierto.
+     */
+    function closeMobileMenu() {
         const checkbox = document.querySelector('.checkbox');
         if (checkbox && checkbox.checked) {
             checkbox.checked = false;
         }
-
-        // Realiza el scroll suave
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// ==============================================
-// 2. Función para alternar el submenú (Móvil)
-// ==============================================
-/**
- * Alterna la visibilidad del submenú de Portafolio en pantallas pequeñas.
- * Usa max-height para una animación CSS suave.
- * @param {Event} event - El evento de clic.
- */
-function toggleSubmenu(event) {
-    // Solo aplica la lógica de toggle en pantallas pequeñas (donde el hover no es suficiente)
-    if (window.innerWidth < 1200) { 
-        const dropdown = event.target.closest('.portfolio-dropdown');
-        const submenu = dropdown.querySelector('.submenu');
-        
-        // Alternar el estado del submenú
-        if (submenu.style.maxHeight && submenu.style.maxHeight !== '0px') {
-            submenu.style.maxHeight = '0'; // Ocultar
-        } else {
-            // Mostrar: usa scrollHeight para obtener la altura necesaria
-            submenu.style.maxHeight = submenu.scrollHeight + "px"; 
-        }
-    }
-}
-
-// ==============================================
-// 3. Función de Filtro/Navegación del Portafolio
-// ==============================================
-/**
- * Desplaza a la sección de portafolio y aplica el filtro.
- * Si el elemento tiene un 'data-link', navega a esa URL en lugar de filtrar.
- * @param {string} filterClass - La clase de filtro a aplicar (e.g., 'encripta', 'all').
- */
-function scrollToFilter(filterClass) {
-    const section = document.getElementById('portfolio');
-    if (section) {
-        // 1. Obtener el elemento que disparó el evento para revisar el data-link
-        const element = event.target;
-        const link = element.getAttribute('data-link');
-
-        // Cierra el menú hamburguesa móvil si está abierto (después del clic en un enlace de menú)
-        const checkbox = document.querySelector('.checkbox');
-        if (checkbox && checkbox.checked) {
-            checkbox.checked = false;
-        }
-
-        // Cierra el submenú si está abierto
-        const submenu = document.querySelector('.submenu');
-        if (submenu) {
+        // También cierra el submenú en móvil
+        if (window.innerWidth < 1200 && submenu) {
             submenu.style.maxHeight = '0';
         }
-        
-        // 2. Comportamiento condicional: Navegación vs. Filtrado
-        if (link) {
-            // Si tiene un data-link, navega directamente a esa URL en una nueva pestaña
-            window.open(link, '_blank');
-        } 
-        
-        // Realiza el scroll a la sección del portafolio (siempre se desplaza)
-        section.scrollIntoView({ behavior: 'smooth' });
-        
-        // 3. Lógica de filtrado (solo se ejecuta si NO es un enlace directo)
-        if (!link) {
-            projectCards.forEach(card => {
-                const isMatch = filterClass === 'all' || card.classList.contains(filterClass);
-                // Muestra u oculta la tarjeta
-                card.style.display = isMatch ? 'block' : 'none';
-            });
-
-            // Actualiza la clase 'active' en la barra de categorías para resaltar el filtro
-            const activeFilter = filterContainer.querySelector('.active');
-            if (activeFilter) {
-                activeFilter.classList.remove('active');
-            }
-            // Busca y activa el filtro que corresponde al elemento de la barra
-            const newActiveFilter = filterContainer.querySelector(`[data-filter="${filterClass}"]`);
-            if (newActiveFilter) {
-                newActiveFilter.classList.add('active');
-            }
-        }
     }
-}
-
-// ==============================================
-// 4. Inicializar el evento de filtro (Categorías de la Galería)
-// ==============================================
-if (filterContainer) {
-    filterContainer.addEventListener("click", (event) => {
-        const target = event.target;
-        if (target.tagName === 'LI') {
-            const filterValue = target.getAttribute('data-filter');
-            // Llama a scrollToFilter (que ahora también se encarga del scroll y cierre de menú)
-            scrollToFilter(filterValue);
-        }
-    });
-}
+});
