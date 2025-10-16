@@ -1,4 +1,4 @@
-              <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -9,7 +9,6 @@
     <meta name="Description" content="Portafolio de desarrollador web JR | UI/UX y Proyectos web." />
     <title>Portafolio</title>
     <link rel="stylesheet" href="index.css" />
-
     <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
     <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
     <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
@@ -21,8 +20,7 @@
             <span class="logo cursor-pointer" onclick="scrollToSection('home')">
                 <img src="img/hA.png" alt="Logo portafolio" width="50" height="50">
             </span>
-            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
-                class="checkbox xl:hidden">
+            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu" class="checkbox xl:hidden">
             <div class="hamburger__lines">
                 <span class="line line1"></span>
                 <span class="line line2"></span>
@@ -33,14 +31,16 @@
                     <li onclick="scrollToSection('about')">Sobre mí</li>
                     <li onclick="scrollToSection('services')">Servicios</li>
                     <li class="portfolio-dropdown">
-                        <span class="dropdown-toggle" onclick="toggleSubmenu(event)">Portafolio <i class="fa-solid fa-angle-down" aria-hidden="true"></i></span>
+                        <span class="dropdown-toggle" onclick="toggleSubmenu(event)">Portafolio <i class="fa-solid fa-angle-down"
+                                aria-hidden="true"></i></span>
                         <ul class="submenu list-none">
                             <li onclick="scrollToSection('portfolio', true)">Todos los Proyectos</li>
                             <li onclick="scrollToFilter('encripta')">Encriptador de texto</li>
                             <li onclick="scrollToFilter('tours__Web')">Barbería HecAgus</li>
                             <li onclick="scrollToFilter('world__Tours')">Inmobiliaria web</li>
                             <li onclick="scrollToFilter('e__commerce')">E-commerce</li>
-                            <li onclick="scrollToFilter('tours__Web')" data-link="https://hecagus.github.io/Panader-a-/#about">Panadería Guadalupe Volcanes</li>
+                            <li onclick="scrollToFilter('tours__Web')"
+                                data-link="https://hecagus.github.io/Panader-a-/#about">Panadería Guadalupe Volcanes</li>
                         </ul>
                     </li>
                     <li onclick="scrollToSection('contact')">Contacto</li>
@@ -52,9 +52,9 @@
             </div>
         </nav>
     </header>
-
     <div class="container">
-        <section id="home" class="home__page flex align-items-center justify-content-center xl:justify-content-between grid grid-nogutter gap-4">
+        <section id="home"
+            class="home__page flex align-items-center justify-content-center xl:justify-content-between grid grid-nogutter gap-4">
             <div class="left__content col-12 xl:col-6">
                 <div class="message__bubble triangle mb-4 md:mb-2">
                     <div class="message__text p-2 sm:p-3 text-center">
@@ -62,35 +62,39 @@
                     </div>
                 </div>
                 <h1 class="text-3xl sm:text-5xl md:text-7xl">hector ibañez</h1>
-                <p class="text-gray-500">
-                    JR en desarrollo web
-                </p>
+                <p class="text-gray-500"> JR en desarrollo web </p>
                 <div class="home__buttons flex align-items-center gap-2 mt-6">
-                    <a href="aquivaelcvv" aria-label="Descargar curriculum"
-                        class="cursor-pointer border-round-lg no-underline" download>Descargar CV</a>
-                    <button onclick="scrollToSection('portfolio')" aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
+                    <a href="aquivaelcvv" aria-label="Descargar curriculum" class="cursor-pointer border-round-lg no-underline"
+                        download>Descargar CV</a>
+                    <button onclick="scrollToSection('portfolio')"
+                        aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
                         class="cursor-pointer border-round-lg">Mi trabajo</button>
                 </div>
             </div>
             <div class="right__content col-12 md:col-6 xl:col-5 flex justify-content-center">
-                <img src="img/fotoperfil.jpg" alt="Foto perfil" width="130" height="130"
-                    class="w-full mx-auto" style="max-width: 300px; height: auto;">
+                <img src="img/fotoperfil.jpg" alt="Foto perfil" width="130" height="130" class="w-full mx-auto"
+                    style="max-width: 300px; height: auto;">
             </div>
         </section>
-
         <section id="about" class="about__me w-full min-h-screen flex align-items-center">
             <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0">
-                
                 <div class="image col p-0 mt-6 md:mt-0">
                     <img src="img/compuu.jpg" alt="Imagen de fondo decorativa de un computador" width="100" height="100">
                 </div>
-                
                 <div class="aboutMe__info col-12 md:col-6 md:pr-6 pt-0">
                     <h1 class="text-3xl md:text-5xl">Sobre mí</h1>
-                    <p class="text-gray-600">Soy estudiante de ingeniería en sistemas computacionales en la Universidad Virtual del Estado de Guanajuato UVEG. Mi pasión por la tecnología me impulsa a buscar constantemente oportunidades para aprender y crecer en este campo. Actualmente, estoy ampliando mis conocimientos a través de un diplomado en ONE - Oracle Next Education.
-                        A lo largo de mi carrera académica y profesional, he adquirido habilidades en programación, desarrollo de software y administración de sistemas. Me encanta enfrentar desafíos técnicos y encontrar soluciones innovadoras. Además, me mantengo actualizado con las últimas tendencias y avances en tecnología, ya que creo en la mejora continua.
-                        Además de mi enfoque en la tecnología, valoro el trabajo en equipo y la colaboración en proyectos desafiantes. Siempre estoy dispuesto a aprender de mis colegas y estoy emocionado por las oportunidades de crecimiento profesional en el futuro tecnológico.
-                        Si deseas conocer más sobre mí o tienes alguna pregunta, no dudes en contactarme.</p>
+                    <p class="text-gray-600">Soy estudiante de ingeniería en sistemas computacionales en la Universidad
+                        Virtual del Estado de Guanajuato UVEG. Mi pasión por la tecnología me impulsa a buscar
+                        constantemente oportunidades para aprender y crecer en este campo. Actualmente, estoy ampliando
+                        mis conocimientos a través de un diplomado en ONE - Oracle Next Education. A lo largo de mi
+                        carrera académica y profesional, he adquirido habilidades en programación, desarrollo de software
+                        y administración de sistemas. Me encanta enfrentar desafíos técnicos y encontrar soluciones
+                        innovadoras. Además, me mantengo actualizado con las últimas tendencias y avances en tecnología,
+                        ya que creo en la mejora continua. Además de mi enfoque en la tecnología, valoro el trabajo en
+                        equipo y la colaboración en proyectos desafiantes. Siempre estoy dispuesto a aprender de mis
+                        colegas y estoy emocionado por las oportunidades de crecimiento profesional en el futuro
+                        tecnológico. Si deseas conocer más sobre mí o tienes alguna pregunta, no dudes en
+                        contactarme.</p>
                     <div class="knowledge flex flex-column gap-3 mt-5">
                         <p> HTML 100%</p>
                         <div class="progress__bar progress__wordpress">
@@ -117,7 +121,6 @@
             </div>
         </section>
     </div>
-
     <section class="freelancer mb-4 mt-4 min-w-full flex flex-column justify-content-center align-items-center">
         <p class="text-sm">¿Tienes un proyecto en mente?</p>
         <h1 class="text-center">Estoy disponible como freelancer</h1>
@@ -126,14 +129,14 @@
                 class="cursor-pointer no-underline border-round-lg">Escríbeme</a>
         </div>
     </section>
-
     <div class="container">
         <section id="services" class="services min-h-full w-full pb-7">
             <div class="services__title flex flex-column gap-3 text-center">
                 <h1 class="text-3xl md:text-5xl">Mis servicios</h1>
                 <p class="text-gray-400 text-sm md:text-base">
-                    Desarrollo web: Diseño y desarrollo sitios web atractivos y funcionales utilizando tecnologías web modernas.
-                    Me aseguro de que los sitios sean responsivos, optimizados para SEO y cumplan con los estándares de usabilidad.
+                    Desarrollo web: Diseño y desarrollo sitios web atractivos y funcionales utilizando tecnologías web
+                    modernas. Me aseguro de que los sitios sean responsivos, optimizados para SEO y cumplan con los
+                    estándares de usabilidad.
                 </p>
             </div>
             <div class="services__card w-full grid grid-nogutter mt-7 gap-5">
@@ -187,12 +190,14 @@
                 </div>
             </div>
         </section>
-
         <section id="portfolio" class="portfolio min-h-full w-full pb-8 pt-8">
             <div class="portfolio__title flex flex-column gap-3 text-center">
                 <h1 class="text-3xl md:text-5xl">Mi trabajo</h1>
                 <p class="text-gray-400 text-sm md:text-base">
-                    A continuación, te invito a explorar mi portafolio, donde podrás encontrar algunos de los trabajos que he realizado hasta ahora. Este portafolio es un reflejo de mi experiencia y habilidades en el campo de la tecnología. Soy orgulloso de compartir estos proyectos contigo, ya que representan mi compromiso con la excelencia y mi pasión por encontrar soluciones innovadoras.
+                    A continuación, te invito a explorar mi portafolio, donde podrás encontrar algunos de los trabajos
+                    que he realizado hasta ahora. Este portafolio es un reflejo de mi experiencia y habilidades en el
+                    campo de la tecnología. Soy orgulloso de compartir estos proyectos contigo, ya que representan mi
+                    compromiso con la excelencia y mi pasión por encontrar soluciones innovadoras.
                 </p>
             </div>
             <div class="portfolio__gallery">
@@ -205,15 +210,16 @@
                         <li class="filter-item" data-filter="e__commerce">E-commerce</li>
                     </ul>
                 </div>
-
                 <div class="proyect__gallery">
                     <div class="project__card tours__Web">
                         <img src="img/barberhecagus.png" alt="barberhecagus">
                         <div class="overlay"></div>
-                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
                             <h2>Barberia HecAgus</h2>
                             <p>Proporcionar autoestima y calidad de vida a nuestros clientes.</p>
-                            <a href="https://hecagus.github.io/barberia/" target="_blank" aria-label="Ver el proyecto Barbería HecAgus">
+                            <a href="https://hecagus.github.io/barberia/" target="_blank"
+                                aria-label="Ver el proyecto Barbería HecAgus">
                                 <span><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
                             </a>
                         </div>
@@ -221,7 +227,8 @@
                     <div class="project__card e__commerce">
                         <img src="./assets/proyecto-2.png" alt="Proyecto E-commerce">
                         <div class="overlay"></div>
-                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
                             <h2>Travel Tours</h2>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet.</p>
                             <span><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
@@ -230,7 +237,8 @@
                     <div class="project__card tours__Web">
                         <img src="./assets/proyecto-3.png" alt="Proyecto Tours Web">
                         <div class="overlay"></div>
-                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
                             <h2>Travel Tours</h2>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet.</p>
                             <span><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
@@ -239,10 +247,14 @@
                     <div class="project__card encripta">
                         <img src="img/encriptadoor.png" alt="Proyecto Encriptador de texto">
                         <div class="overlay"></div>
-                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
                             <h2>Encriptador de texto</h2>
-                            <p>Copiame y pegame en el enciptador: fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!</p>
-                            <a href="https://hecagus.github.io/encriptadoor/" target="_blank" aria-label="Ver el proyecto Encriptador de Texto">
+                            <p>Copiame y pegame en el enciptador:
+                                fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y
+                                haibenterrlober cobernclufatimesdober cobern enterximestober!</p>
+                            <a href="https://hecagus.github.io/encriptadoor/" target="_blank"
+                                aria-label="Ver el proyecto Encriptador de Texto">
                                 <span><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
                             </a>
                         </div>
@@ -250,7 +262,8 @@
                     <div class="project__card world__Tours">
                         <img src="./assets/proyecto-5.jpg" alt="Proyecto Inmobiliaria Web">
                         <div class="overlay"></div>
-                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
                             <h2>Travel Tours</h2>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet.</p>
                             <span><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
@@ -259,10 +272,14 @@
                     <div class="project__card tours__Web">
                         <img src="img/logopan.jpg" alt="Logo de la Panadería Guadalupe Volcanes">
                         <div class="overlay"></div>
-                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                        <div
+                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
                             <h2>Panadería Guadalupe Volcanes</h2>
-                            <p>Visita el sitio completo de la panadería. Proyecto enfocado en diseño y experiencia de usuario.</p>
-                            <a href="https://hecagus.github.io/Panader-a-/#about" target="_blank" class="project-link-button" aria-label="Ver el proyecto Panadería Guadalupe Volcanes">
+                            <p>Visita el sitio completo de la panadería. Proyecto enfocado en diseño y experiencia de
+                                usuario.</p>
+                            <a href="https://hecagus.github.io/Panader-a-/#about" target="_blank"
+                                class="project-link-button"
+                                aria-label="Ver el proyecto Panadería Guadalupe Volcanes">
                                 <span><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></span>
                             </a>
                         </div>
@@ -270,7 +287,6 @@
                 </div>
             </div>
         </section>
-
         <footer id="contact" class="min-h-full w-full flex grid col-12 justify-content-center pb-8 pt-8 lg:text-center">
             <div class="social__media col-12 md:col-4 flex flex-column justify-content-between">
                 <h3>Redes sociales</h3>
@@ -283,7 +299,8 @@
                     <a href="https://www.instagram.com/hector_ibanezg/" target="_blank" aria-label="Ir a instagram">
                         <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/h%C3%A9ctor-agust%C3%ADn-iba%C3%B1ez-gutierrez-77521a170/" target="_blank" aria-label="Ir a linkedin">
+                    <a href="https://www.linkedin.com/in/h%C3%A9ctor-agust%C3%ADn-iba%C3%B1ez-gutierrez-77521a170/"
+                        target="_blank" aria-label="Ir a linkedin">
                         <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -302,7 +319,8 @@
                     class="cursor-pointer text-center col-4 sm:col-6 xl:col-4 mt-3 no-underline border-round-lg">
                     <span>
                         <i class="fa-solid fa-message" aria-hidden="true"></i>
-                    </span> Contáctame
+                    </span>
+                    Contáctame
                 </a>
             </div>
             <div class="my__services col-12 sm:col-6 sm:p-0 md:col-4 md:pt-2 md:align-items-center flex flex-column justify-content-between">
@@ -314,7 +332,6 @@
             </div>
         </footer>
     </div>
-
 </body>
 <script src="index.js"></script>
 
