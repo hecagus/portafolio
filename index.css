@@ -2,162 +2,163 @@
 /* 1. CONFIGURACIÓN GENERAL Y VARIABLES */
 /* ======================== */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #f8f9fa;
-    --text-color: #495057;
-    --dark-bg: #212529;
-    --primary-hover-color: #0056b3;
+  --primary-color: #007bff;
+  --secondary-color: #f8f9fa;
+  --text-color: #495057;
+  --dark-bg: #212529;
+  --primary-hover-color: #0056b3;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: var(--text-color);
-    margin: 0;
-    padding-top: 67px; /* Añadimos padding para que el contenido no quede oculto bajo el header fijo */
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  padding-top: 67px; /* Añadimos padding para que el contenido no quede oculto bajo el header fijo */
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* ======================== */
 /* 2. HEADER Y NAVEGACIÓN */
 /* ======================== */
 .navbar {
-    background-color: white;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 
 /* ======================== */
 /* 3. ESTILOS PARA MÓVIL (MENÚ HAMBURGUESA) */
 /* ======================== */
-.checkbox, .hamburger__lines {
-    display: block;
+.checkbox,
+.hamburger__lines {
+  display: block;
 }
 
 .checkbox {
-    position: absolute;
-    height: 32px;
-    width: 32px;
-    top: 15px;
-    right: 15px;
-    z-index: 5;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .hamburger__lines {
-    height: 26px;
-    width: 32px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 4;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hamburger__lines .line {
-    display: block;
-    height: 4px;
-    width: 100%;
-    border-radius: 10px;
-    background: var(--text-color);
-    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--text-color);
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .checkbox:checked ~ .hamburger__lines .line1 {
-    transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .checkbox:checked ~ .hamburger__lines .line2 {
-    opacity: 0;
+  opacity: 0;
 }
 
 .checkbox:checked ~ .hamburger__lines .line3 {
-    transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 .header__info {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 100%;
-    background-color: var(--dark-bg);
-    padding-top: 5rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  background-color: var(--dark-bg);
+  padding-top: 5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  z-index: 999;
 }
 
 .checkbox:checked ~ .header__info {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .header__info ul {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .header__info li {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-    font-size: 1.25rem;
-    color: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: white;
 }
 
 .header__info li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .portfolio-dropdown {
-    position: relative;
-    padding: 0;
+  position: relative;
+  padding: 0;
 }
 
 .portfolio-dropdown .dropdown-toggle {
-    display: block;
-    padding: 1rem 0;
-    cursor: pointer;
-    font-size: 1.25rem;
-    color: white;
+  display: block;
+  padding: 1rem 0;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: white;
 }
 
 .submenu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    background-color: #343a40;
-    width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  background-color: #343a40;
+  width: 100%;
 }
 
 .submenu li {
-    padding: 0.75rem 0;
-    font-size: 1rem;
-    color: #ced4da;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: #ced4da;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .submenu li:hover {
-    background-color: #495057;
+  background-color: #495057;
 }
 
 /* ======================== */
@@ -166,62 +167,74 @@ body {
 
 /* --- SECCIÓN SOBRE MÍ (VERSIÓN CORREGIDA) --- */
 .aboutMe__content {
-    position: relative;
-    width: 100%;
-    display: flex; /* Para alinear el contenido de texto */
-    justify-content: flex-start; /* Alinea el texto a la izquierda */
-    align-items: center;
+  position: relative;
+  width: 100%;
+  display: flex; /* Para alinear el contenido de texto */
+  justify-content: flex-start; /* Alinea el texto a la izquierda */
+  align-items: center;
 }
 
 .aboutMe__content > .image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .aboutMe__content > .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.08; /* Lo hacemos muy sutil */
-    border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.08; /* Lo hacemos muy sutil */
+  border-radius: 8px;
 }
 
 .aboutMe__content > .aboutMe__info {
-    position: relative;
-    z-index: 2;
-    background-color: transparent;
-    max-width: 100%; /* Aseguramos que el texto no se desborde */
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+  max-width: 100%; /* Aseguramos que el texto no se desborde */
 }
 
 /* --- GALERÍA DE PROYECTOS (VERSIÓN CORREGIDA) --- */
 .proyect__gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+  gap: 1.5rem;
+}
+
+/* Media queries para la galería de proyectos */
+@media (max-width: 992px) {
+  .proyect__gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 576px) {
+  .proyect__gallery {
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+  }
 }
 
 /* ======================== */
 /* 5. ESTILOS PARA BOTONES Y OTROS ELEMENTOS */
 /* ======================== */
-
 .hireMe__button a,
 .home__buttons a,
 .home__buttons button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    text-align: center;
-    border: none;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    font-weight: bold;
-    display: inline-block;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .hireMe__button a:hover,
@@ -230,130 +243,128 @@ body {
 .hireMe__button a:focus,
 .home__buttons a:focus,
 .home__buttons button:focus {
-    background-color: var(--primary-hover-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  background-color: var(--primary-hover-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
 /* ======================== */
 /* 6. BARRAS DE PROGRESO */
 /* ======================== */
 .progress__bar {
-    background-color: #e9ecef;
-    border-radius: 1rem;
-    height: 10px;
-    width: 100%;
-    overflow: hidden;
+  background-color: #e9ecef;
+  border-radius: 1rem;
+  height: 10px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .progress__bar span {
-    display: block;
-    height: 100%;
-    background-color: var(--primary-color);
-    border-radius: 1rem;
+  display: block;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
 }
 
 /* Anchos de las barras de progreso */
-.progress__wordpress span { width: 100%; } /* HTML */
-.progress__html span { width: 75%; }      /* CSS */
-.progress__angular span { width: 80%; }   /* JS */
-.progress__reactJs span { width: 95%; }   /* React Js */
-
+.progress__wordpress span {
+  width: 100%;
+} /* HTML */
+.progress__html span {
+  width: 75%;
+} /* CSS */
+.progress__angular span {
+  width: 80%;
+} /* JS */
+.progress__reactJs span {
+  width: 95%;
+} /* React Js */
 
 /* ================================================ */
 /* 7. ESTILOS PARA ESCRITORIO (PANTALLAS GRANDES) */
 /* ================================================ */
 @media (min-width: 1200px) {
+  .checkbox,
+  .hamburger__lines {
+    display: none;
+  }
 
-    .checkbox,
-    .hamburger__lines {
-        display: none;
-    }
+  .header__info {
+    position: static;
+    transform: translateX(0);
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding-top: 0;
+    box-shadow: none;
+    z-index: auto;
+  }
 
-    .header__info {
-        position: static;
-        transform: translateX(0);
-        flex-direction: row;
-        width: auto;
-        height: auto;
-        background-color: transparent;
-        padding-top: 0;
-        box-shadow: none;
-        z-index: auto;
-    }
+  .header__info ul {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    gap: 2rem;
+  }
 
-    .header__info ul {
-        display: flex;
-        flex-direction: row;
-        text-align: left;
-        gap: 2rem;
-    }
+  .header__info li {
+    padding: 0;
+    border-bottom: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: color 0.2s;
+  }
 
-    .header__info li {
-        padding: 0;
-        border-bottom: none;
-        font-size: 1rem;
-        color: var(--text-color);
-        transition: color 0.2s;
-    }
+  .header__info li:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
 
-    .header__info li:hover {
-        background-color: transparent;
-        color: var(--primary-color);
-    }
-    
-    .portfolio-dropdown .dropdown-toggle {
-        padding: 0;
-        font-size: 1rem;
-        color: var(--text-color);
-    }
+  .portfolio-dropdown .dropdown-toggle {
+    padding: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
 
-    .submenu {
-        position: absolute;
-        top: 150%;
-        left: -1rem;
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
-        width: 200px;
-        max-height: none;
-        overflow: visible;
-        padding: 0.5rem 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
-    }
+  .submenu {
+    position: absolute;
+    top: 150%;
+    left: -1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 200px;
+    max-height: none;
+    overflow: visible;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease;
+  }
 
-    .portfolio-dropdown:hover .submenu {
-        opacity: 1;
-        visibility: visible;
-        top: 100%;
-    }
-    
-    .submenu li {
-        color: var(--text-color);
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #eee;
-    }
+  .portfolio-dropdown:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+  }
 
-    .submenu li:last-child {
-        border-bottom: none;
-    }
+  .submenu li {
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
 
-    .submenu li:hover {
-        background-color: var(--secondary-color);
-    }
+  .submenu li:last-child {
+    border-bottom: none;
+  }
+
+  .submenu li:hover {
+    background-color: var(--secondary-color);
+  }
 }
 
-/* Media queries para la galería de proyectos */
-@media (max-width: 992px) {
-    .proyect__gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .proyect__gallery {
-        grid-template-columns: 1fr;
-    }
+/* Estilos para ocultar y mostrar los projectos */
+.project__card.oculto {
+  display: none;
 }
