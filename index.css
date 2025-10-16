@@ -198,24 +198,18 @@ body {
   max-width: 100%; /* Aseguramos que el texto no se desborde */
 }
 
-/* --- GALERÍA DE PROYECTOS (VERSIÓN CORREGIDA) --- */
+/* --- GALERÍA DE PROYECTOS (VERSIÓN AJUSTADA) --- */
 .proyect__gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
-  gap: 1.5rem;
+  gap: 1rem; /* Espacio entre los proyectos */
 }
 
-/* Media queries para la galería de proyectos */
-@media (max-width: 992px) {
-  .proyect__gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
-  }
-}
-
-@media (max-width: 576px) {
-  .proyect__gallery {
-    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
-  }
+.project__card img {
+  width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Ajusta la imagen al contenedor, recortando si es necesario */
+  border-radius: 8px; /* Opcional: añade bordes redondeados a las imágenes */
 }
 
 /* ======================== */
@@ -361,6 +355,19 @@ body {
 
   .submenu li:hover {
     background-color: var(--secondary-color);
+  }
+}
+
+/* Media queries para la galería de proyectos */
+@media (max-width: 992px) {
+  .proyect__gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .proyect__gallery {
+    grid-template-columns: 1fr;
   }
 }
 
