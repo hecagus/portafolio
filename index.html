@@ -1,342 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-    <link rel="icon" href="/img/logo.png" type="image/x-icon">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Description" content="Portafolio de desarrollador web JR | UI/UX y Proyectos web." />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <script src="" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio de Héctor Ibáñez: desarrollo web, automatización, cloud y proyectos reales.">
+  <meta name="theme-color" content="#0b1020">
+  <title>Héctor Ibáñez · Portafolio</title>
+  <link rel="icon" href="img/hA.png" type="image/png">
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
 </head>
-
 <body>
-    <header class="flex w-full fixed top-0 z-1">
-        <nav class="flex justify-content-between w-full navbar">
-            <span class="logo cursor-pointer" onclick="scrollToSection('home')">
-                <img src="img/logo.png" alt="Logo portafolio" width="50" height="50">
-            </span>
-            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
-                class="checkbox xl:hidden">
-            <div class="hamburger__lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <div class="header__info flex align-items-center gap-3">
-                <ul class="flex flex-column xl:flex-row list-none">
-                    <li onclick="scrollToSection('about')">Sobre mí</li>
-                    <li onclick="scrollToSection('services')">Servicios</li>
-                    <li class="portfolio-dropdown">
-                        <span class="dropdown-toggle" onclick="toggleSubmenu(event)">Portafolio <i
-                                class="fa-solid fa-angle-down" aria-hidden="true"></i></span>
-                        <ul class="submenu list-none">
-                            <li onclick="scrollToSection('portfolio', true)">Todos los Proyectos</li>
-                            <li onclick="scrollToFilter('encripta')">Encriptador de texto</li>
-                            <li onclick="scrollToFilter('tours__Web')">Tours web</li>
-                            <li onclick="scrollToFilter('world__Tours')">Inmobiliaria web</li>
-                            <li onclick="scrollToFilter('e__commerce')">E-commerce</li>
-                        </ul>
-                    </li>
-                    <li onclick="scrollToSection('contact')">Contacto</li>
-                </ul>
-                <div class="hireMe__button pt-4">
-                    <a href="mailTo:hec17tor@gmail.com" aria-label="Enviar mensaje al correo"
-                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">Contrátame</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <section id="home"
-            class="home__page flex align-items-center justify-content-center xl:justify-content-between grid grid-nogutter gap-4">
-            <div class="left__content col-12 xl:col-6">
-                <div class="message__bubble triangle mb-4 md:mb-2">
-                    <div class="message__text p-2 sm:p-3 text-center">
-                        <p>Hola, Yo soy</p>
-                    </div>
-                </div>
-                <h1 class="text-3xl sm:text-5xl md:text-7xl">hector ibañez</h1>
-                <p class="text-gray-500"> JR en desarrollo web </p>
-                <div class="home__buttons flex align-items-center gap-2 mt-6">
-                    <a href="aquivaelcvv" aria-label="Descargar curriculum"
-                        class="cursor-pointer border-round-lg no-underline" download>Descargar CV</a>
-                    <button onclick="scrollToSection('portfolio')"
-                        aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
-                        class="cursor-pointer border-round-lg">Mi trabajo</button>
-                </div>
-            </div>
-            <div class="right__content col-12 md:col-6 xl:col-5 flex justify-content-center">
-                <img src="img/fotoperfil.jpg" alt="Foto perfil" width="130" height="130" class="w-full mx-auto"
-                    style="max-width: 300px; height: auto;">
-            </div>
-        </section>
-        <section id="about" class="about__me w-full min-h-screen flex align-items-center">
-            <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0">
-                <div class="image col p-0 mt-6 md:mt-0">
-                    <img src="img/compuu.jpg" alt="Imagen de fondo decorativa de un computador" width="100"
-                        height="100">
-                </div>
-                <div class="aboutMe__info col-12 md:col-6 md:pr-6 pt-0">
-                    <h1 class="text-3xl md:text-5xl">Sobre mí</h1>
-                    <p class="text-gray-400">Soy estudiante de ingeniería en sistemas computacionales en la Universidad
-                        Virtual del Estado de Guanajuato UVEG. Mi pasión por la tecnología me impulsa a buscar
-                        constantemente oportunidades para aprender y crecer en este campo. Actualmente, estoy ampliando
-                        mis conocimientos a través de un diplomado en ONE - Oracle Next Education. A lo largo de mi
-                        carrera académica y profesional, he adquirido habilidades en programación, desarrollo de softwer
-                        y administración de sistemas. Me encanta enfrentar desafíos técnicos y encontrar soluciones
-                        innovadoras. Además, me mantengo actualizado con las últimas tendencias y avances en tecnología,
-                        ya que creo en la mejora continua. Además de mi enfoque en la tecnología, valoro el trabajo en
-                        equipo y la colaboración en proyectos desafiantes. Siempre estoy dispuesto a aprender de mis
-                        colegas y estoy emocionado por las oportunidades de crecimiento profesional en el futuro
-                        tecnológico. Si deseas conocer más sobre mí o tienes alguna pregunta, no dudes en contactarme.
-                    </p>
-                    <div class="knowledge flex flex-column gap-3 mt-5">
-                        <p> HTML 1%</p>
-                        <div class="progress__bar progress__wordpress">
-                            <span></span>
-                        </div>
-                        <p>CSS 5%</p>
-                        <div class="progress__bar progress__html">
-                            <span></span>
-                        </div>
-                        <p>JS 8%</p>
-                        <div class="progress__bar progress__angular">
-                            <span></span>
-                        </div>
-                        <p>React Js 5%</p>
-                        <div class="progress__bar progress__reactJs">
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="hireMe__button pt-4">
-                        <a href="" aria-label=" WhatsApp "
-                            class="cursor-pointer no-underline border-round-lg">Contrátame</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <section
-        class="freelancer mb-4 mt-4 min-w-full flex flex-column justify-content-center align-items-center">
-        <p class="text-sm">¿Tienes un proyecto en mente?</p>
-        <h1 class="text-center">Estoy disponible como freelancer</h1>
-        <div class="hireMe__button pt-4">
-            <a href="mailTo:" aria-label="Enviar mensaje al correo"
-                class="cursor-pointer no-underline border-round-lg">Escríbeme</a>
-        </div>
-    </section>
-    <div class="container">
-        <section id="services" class="services min-h-full w-full pb-7">
-            <div class="services__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Mis servicios</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    Desarrollo web: Diseño y desarrollo sitios web atractivos y funcionales utilizando tecnologías web
-                    modernas. Me aseguro de que los sitios sean responsivos, optimizados para SEO y cumplan con los
-                    estándares de usabilidad.
-                </p>
-            </div>
-            <div class="services__card w-full grid grid-nogutter mt-7 gap-5">
-                <div class="card flex align-items-center col-12 sm:col-6 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center">
-                        <i class="fa-brands fa-html5" aria-hidden="true"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>HTML</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-brands fa-wordpress" aria-hidden="true"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Wordpress</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-3 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-brands fa-angular" aria-hidden="true"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Angular</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col md:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-brands fa-react" aria-hidden="true"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>React Js</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-4 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Desarrollo Móvil</p>
-                    </div>
-                </div>
-                <div class="card flex align-items-center col-12 sm:col md:col-4 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-solid fa-code" aria-hidden="true"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Desarrollo web</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio" class="portfolio min-h-full w-full pb-8 pt-8">
-            <div class="portfolio__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Mi trabajo</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    A continuación, te invito a explorar mi portafolio, donde podrás encontrar algunos de los trabajos
-                    que he realizado hasta ahora. Este portafolio es un reflejo de mi experiencia y habilidades en el
-                    campo de la tecnología. Soy orgulloso de compartir estos proyectos contigo, ya que representan mi
-                    compromiso con la excelencia y mi pasión por encontrar soluciones innovadoras.
-                </p>
-            </div>
-            <div class="portfolio__gallery">
-                <div class="gallery__categories mb-5 mt-5">
-                    <ul class="flex list-none flex-wrap justify-content-center gap-3">
-                        <li class="filter-item active" data-filter="all">Todos</li>
-                        <li class="filter-item" data-filter="encripta">Encriptador de texto</li>
-                        <li class="filter-item" data-filter="tours__Web">Tours web</li>
-                        <li class="filter-item" data-filter="world__Tours">Inmobiliaria web</li>
-                        <li class="filter-item" data-filter="e__commerce">E-commerce</li>
-                    </ul>
-                </div>
-                <div class="proyect__gallery">
-                    <div class="project__card tours__Web">
-                        <a href="" target="_blank" aria-label="Ver el proyecto Barbería HecAgus">
-                            <img src="img/barberhecagus.png" alt="barberhecagus">
-                            <div class="overlay"></div>
-                            <div
-                                class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                <h2>Barberia HecAgus</h2>
-                                <p>Proporcionar autoestima y calidad de vida a nuestros clientes.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project__card e__commerce">
-                        <a href="#" target="_blank">
-                            <img src="./assets/proyecto-2.png" alt="Proyecto E-commerce">
-                            <div class="overlay"></div>
-                            <div
-                                class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                <h2>Travel Tours</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati
-                                    amet.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project__card tours__Web">
-                        <a href="#" target="_blank">
-                            <img src="./assets/proyecto-3.png" alt="Proyecto Tours Web">
-                            <div class="overlay"></div>
-                            <div
-                                class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                <h2>Travel Tours</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati
-                                    amet.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project__card encripta">
-                        <a href="" target="_blank" aria-label="Ver el proyecto Encriptador de Texto">
-                            <img src="img/encriptadoor.png" alt="Proyecto Encriptador de texto">
-                            <div class="overlay"></div>
-                            <div
-                                class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                <h2>Encriptador de texto</h2>
-                                <p>Copiame y pegame en el enciptador:
-                                    fenterlimescimesdaidenters poberr enternfrenterntair enterstenter
-                                    d entersaifimesober y
-                                    haibenterrlober cobernclufatimesdober cobern enterximestober!</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project__card world__Tours">
-                        <a href="#" target="_blank">
-                            <img src="./assets/proyecto-5.jpg" alt="Proyecto Inmobiliaria Web">
-                            <div class="overlay"></div>
-                            <div
-                                class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                <h2>Travel Tours</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati
-                                    amet.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project__card tours__Web">
-                        <a href="https://hecagus.github.io/Panader-a-/" target="_blank" class="project-link-button"
-                            aria-label="Ver el proyecto Panadería de Karla">
-                            <img src="img/Logopan.png" alt="Logo de la Panadería de Karla">
-                            <div class="overlay"></div>
-                            <div
-                                class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                                <h2>Panadería de Karla</h2>
-                                <p>Visita el sitio completo de la panadería. Proyecto enfocado en diseño y experiencia
-                                    de usuario.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer id="contact"
-            class="min-h-full w-full flex grid col-12 justify-content-center pb-8 pt-8 lg:text-center">
-            <div class="social__media col-12 md:col-4 flex flex-column justify-content-between">
-                <h3>Redes sociales</h3>
-                <p>Auténtico e innovador</p>
-                <p>Desarrollo lo que necesitas, con un enfoque en usabilidad y rendimiento</p>
-                <div class="social__mediaIcons mt-5 flex lg:justify-content-center gap-3">
-                    <a href="" target="_blank" aria-label="Ir a facebook">
-                        <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="" target="_blank" aria-label="Ir a instagram">
-                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="" target="_blank" aria-label="Ir a linkedin">
-                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-            <div
-                class="contact col-12 sm:col-6 sm:pt-0 md:pt-2 md:col-4 flex flex-column justify-content-between md:align-items-center">
-                <h3>Contacto</h3>
-                <div class="phone__number flex align-items-center gap-2">
-                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                    <p>8135037076</p>
-                </div>
-                <div class="email flex align-items-center gap-2">
-                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                    <p>hec17tor@gmail.com</p>
-                </div>
-                <a href="mailTo:hec17tor@gmail.com"
-                    class="cursor-pointer text-center col-4 sm:col-6 xl:col-4 mt-3 no-underline border-round-lg">
-                    <span>
-                        <i class="fa-solid fa-message" aria-hidden="true"></i>
-                    </span>
-                    Contáctame
-                </a>
-            </div>
-            <div
-                class="my__services col-12 sm:col-6 sm:p-0 md:col-4 md:pt-2 md:align-items-center flex flex-column justify-content-between">
-                <h3>Mis Servicios</h3>
-                <p>Desarrollo web</p>
-                <p>Desarrollo móvil</p>
-                <p>Diseñador UI /UX</p>
-                <P>Marketing Digital</P>
-            </div>
-        </footer>
-    </div>
-    <script src="index.js"></script>
-</body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Ir al inicio">H<span>+</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#about">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">DESARROLLO · CLOUD · AUTOMATIZACIÓN</p>
+        <h1>Construyo soluciones que <span>sí hacen algo.</span></h1>
+        <p class="hero-text">Soy Héctor Ibáñez. Desarrollo proyectos web, automatizaciones y herramientas orientadas a resolver problemas reales, con especial interés en arquitectura, datos y cloud.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Ver proyectos</a>
+          <a class="button ghost" href="https://github.com/hecagus" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+        <div class="status"><span class="status-dot"></span> Aprendiendo, construyendo y mejorando proyectos reales</div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="terminal-card">
+          <div class="terminal-top"><span></span><span></span><span></span></div>
+          <pre><code>$ whoami
+Héctor Ibáñez
+
+$ focus
+web · cloud · automation
+
+$ philosophy
+build → test → improve
+
+$ status
+ready_</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split" id="about">
+      <div>
+        <p class="section-kicker">SOBRE MÍ</p>
+        <h2>No vendo porcentajes de habilidad. Muestro lo que construyo.</h2>
+      </div>
+      <div class="about-copy">
+        <p>Estudio Ingeniería en Sistemas Computacionales y complemento mi formación con proyectos propios, desarrollo web, programación y cloud. Me interesa entender cómo funcionan las cosas por dentro, separar responsabilidades y convertir prototipos en productos más mantenibles.</p>
+        <p>Mi objetivo con este portafolio es simple: que cada proyecto tenga código real, decisiones técnicas explicables y algo funcionando para probar.</p>
+      </div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">STACK</p>
+          <h2>Tecnologías con las que trabajo y estudio</h2>
+        </div>
+      </div>
+      <div class="stack-grid">
+        <article class="stack-card"><span>01</span><h3>Frontend</h3><p>HTML · CSS · JavaScript · Responsive UI</p></article>
+        <article class="stack-card"><span>02</span><h3>Backend & Datos</h3><p>Java · Firebase · Firestore · SQL</p></article>
+        <article class="stack-card"><span>03</span><h3>Cloud</h3><p>Google Cloud · Cloud Shell · GitHub Actions</p></article>
+        <article class="stack-card"><span>04</span><h3>Workflow</h3><p>Git · GitHub · Testing · CI/CD · PWA</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">PROYECTOS</p>
+          <h2>Trabajo real, no tarjetas de relleno</h2>
+        </div>
+        <p>Selección de proyectos construidos, mantenidos o evolucionados por mí.</p>
+      </div>
+
+      <article class="featured-project">
+        <div class="project-index">01 / DESTACADO</div>
+        <div class="featured-copy">
+          <p class="project-type">PWA · FINANZAS · OFFLINE-FIRST</p>
+          <h3>Presupuesto Mensual V11</h3>
+          <p>Aplicación financiera personal evolucionada desde un prototipo local a una PWA modular. Incluye motor financiero, persistencia local, modo offline, pruebas automáticas, CI y arquitectura preparada para sincronización Firebase con manejo de conflictos.</p>
+          <ul class="tech-list">
+            <li>JavaScript ES Modules</li><li>Service Worker</li><li>Node Test Runner</li><li>GitHub Actions</li><li>Firebase-ready</li>
+          </ul>
+          <div class="project-actions">
+            <a class="button primary" href="https://presupuesto-mensual-jade.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Ver app ↗</a>
+            <a class="text-link" href="https://github.com/hecagus/PRESUPUESTO-MENSUAL" target="_blank" rel="noopener noreferrer">Código en GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-mockup budget-mockup" aria-label="Vista conceptual de la aplicación Presupuesto Mensual">
+          <div class="mockup-bar"><span></span><span></span><span></span></div>
+          <div class="mockup-body">
+            <div class="metric"><small>Balance</small><strong>$12,480</strong></div>
+            <div class="mini-grid"><span>Ingresos</span><span>Gastos</span><b>$18,200</b><b>$5,720</b></div>
+            <div class="fake-chart"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <img src="img/Logopan.png" alt="Panadería de Karla" loading="lazy">
+          <div class="project-card-body">
+            <p class="project-type">WEB · UI</p>
+            <h3>Panadería de Karla</h3>
+            <p>Sitio web orientado a presentación de producto, identidad visual y experiencia responsive.</p>
+            <div class="card-links"><a href="https://hecagus.github.io/Panader-a-/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a><a href="https://github.com/hecagus/Panader-a-" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="img/encriptadoor.png" alt="Encriptador de texto" loading="lazy">
+          <div class="project-card-body">
+            <p class="project-type">JAVASCRIPT · LÓGICA</p>
+            <h3>Encriptador de texto</h3>
+            <p>Proyecto de lógica de transformación de texto con interfaz web y manipulación del DOM.</p>
+            <div class="card-links"><a href="https://github.com/hecagus/encriptadoor" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="img/barberhecagus.png" alt="Barbería HecAgus" loading="lazy">
+          <div class="project-card-body">
+            <p class="project-type">WEB · FRONTEND</p>
+            <h3>Barbería HecAgus</h3>
+            <p>Proyecto frontend enfocado en estructura visual, navegación y presentación de servicios.</p>
+            <div class="card-links"><a href="https://github.com/hecagus/barberia" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <p class="section-kicker">CONTACTO</p>
+      <h2>¿Tienes una idea, un proyecto o una oportunidad?</h2>
+      <p>Podemos hablar de desarrollo, automatización, soporte técnico o colaboración.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="mailto:hec17tor@gmail.com">Enviar correo</a>
+        <a class="button ghost" href="https://github.com/hecagus" target="_blank" rel="noopener noreferrer">Ver GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Héctor Ibáñez · Construido con HTML, CSS y JavaScript.</p>
+  </footer>
+</body>
 </html>
