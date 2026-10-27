@@ -3,187 +3,145 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portafolio de Héctor Ibáñez: desarrollo web, automatización, cloud y proyectos reales.">
-  <meta name="theme-color" content="#0b1020">
-  <title>Héctor Ibáñez · Portafolio</title>
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Portafolio de Héctor Ibáñez. Proyectos de desarrollo web, aplicaciones financieras, automatización y sistemas. Conoce Presupuesto Mensual y Pastalicious.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Héctor Ibáñez — Ingeniería, producto y código">
+  <meta property="og:description" content="Dos productos reales. Decisiones técnicas, retos de mantenimiento y soluciones en funcionamiento.">
+  <meta property="og:url" content="https://portafolio-mu-dun.vercel.app/">
+  <meta name="color-scheme" content="dark">
+  <title>Héctor Ibáñez | Desarrollo de software y proyectos</title>
   <link rel="icon" href="img/hA.png" type="image/png">
   <link rel="stylesheet" href="index.css">
   <script src="index.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Ir al inicio">H<span>+</span></a>
-    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="#about">Sobre mí</a>
-      <a href="#stack">Stack</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#contact">Contacto</a>
+    <a class="brand" href="#inicio" aria-label="Héctor Ibáñez, ir al inicio"><span class="brand-mark">H<span aria-hidden="true">/</span>I</span><span class="brand-copy">HÉCTOR IBÁÑEZ <small>SOFTWARE & SISTEMAS</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">Menú <span aria-hidden="true">+</span></button>
+    <nav class="nav" id="site-nav" aria-label="Navegación principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#enfoque">Enfoque</a>
+      <a href="#tecnologias">Tecnologías</a>
+      <a class="nav-contact" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
-
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">DESARROLLO · CLOUD · AUTOMATIZACIÓN</p>
-        <h1>Construyo soluciones que <span>sí hacen algo.</span></h1>
-        <p class="hero-text">Soy Héctor Ibáñez. Desarrollo proyectos web, automatizaciones y herramientas orientadas a resolver problemas reales, con especial interés en arquitectura, datos y cloud.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">Ver proyectos</a>
-          <a class="button ghost" href="https://github.com/hecagus" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        </div>
-        <div class="status"><span class="status-dot"></span> Aprendiendo, construyendo y mejorando proyectos reales</div>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="terminal-card">
-          <div class="terminal-top"><span></span><span></span><span></span></div>
-          <pre><code>$ whoami
-Héctor Ibáñez
-
-$ focus
-web · cloud · automation
-
-$ philosophy
-build → test → improve
-
-$ status
-ready_</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="section split" id="about">
-      <div>
-        <p class="section-kicker">SOBRE MÍ</p>
-        <h2>No vendo porcentajes de habilidad. Muestro lo que construyo.</h2>
-      </div>
-      <div class="about-copy">
-        <p>Estudio Ingeniería en Sistemas Computacionales y complemento mi formación con proyectos propios, desarrollo web, programación y cloud. Me interesa entender cómo funcionan las cosas por dentro, separar responsabilidades y convertir prototipos en productos más mantenibles.</p>
-        <p>Mi objetivo con este portafolio es simple: que cada proyecto tenga código real, decisiones técnicas explicables y algo funcionando para probar.</p>
-      </div>
-    </section>
-
-    <section class="section" id="stack">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">STACK</p>
-          <h2>Tecnologías con las que trabajo y estudio</h2>
-        </div>
-      </div>
-      <div class="stack-grid">
-        <article class="stack-card"><span>01</span><h3>Frontend</h3><p>HTML · CSS · JavaScript · Responsive UI</p></article>
-        <article class="stack-card"><span>02</span><h3>Backend & Datos</h3><p>Java · Firebase · Firestore · SQL</p></article>
-        <article class="stack-card"><span>03</span><h3>Cloud</h3><p>Google Cloud · Cloud Shell · GitHub Actions</p></article>
-        <article class="stack-card"><span>04</span><h3>Workflow</h3><p>Git · GitHub · Testing · CI/CD · PWA</p></article>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">PROYECTOS</p>
-          <h2>Trabajo real, no tarjetas de relleno</h2>
-        </div>
-        <p>Selección de proyectos construidos, mantenidos o evolucionados por mí.</p>
-      </div>
-
-      <article class="featured-project">
-        <div class="project-index">01 / DESTACADO</div>
-        <div class="featured-copy">
-          <p class="project-type">PWA · FINANZAS · OFFLINE-FIRST</p>
-          <h3>Presupuesto Mensual V11</h3>
-          <p>Aplicación financiera personal evolucionada desde un prototipo local a una PWA modular. Incluye motor financiero, persistencia local, modo offline, pruebas automáticas, CI y arquitectura preparada para sincronización Firebase con manejo de conflictos.</p>
-          <ul class="tech-list">
-            <li>JavaScript ES Modules</li><li>Service Worker</li><li>Node Test Runner</li><li>GitHub Actions</li><li>Firebase-ready</li>
-          </ul>
-          <div class="project-actions">
-            <a class="button primary" href="https://presupuesto-mensual-jade.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Ver app ↗</a>
-            <a class="text-link" href="https://github.com/hecagus/PRESUPUESTO-MENSUAL" target="_blank" rel="noopener noreferrer">Código en GitHub ↗</a>
+  <main id="main">
+    <section class="hero wrap" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-label"><span class="indicator" aria-hidden="true"></span> PORTAFOLIO / PUEBLA, MÉXICO <span class="hero-year">2026</span></div>
+      <div class="hero-main">
+        <div class="hero-intro">
+          <p class="overline">INGENIERÍA EN SISTEMAS COMPUTACIONALES · EN FORMACIÓN</p>
+          <h1 id="hero-title">Del problema<br>al <em>software.</em></h1>
+          <p class="lead">Desarrollo y mejoro aplicaciones con una prioridad: que resuelvan necesidades concretas y se puedan mantener después del lanzamiento.</p>
+          <div class="hero-actions">
+            <a href="#proyectos" class="button button-primary">Explorar proyectos <span aria-hidden="true">↘</span></a>
+            <a href="https://github.com/hecagus" class="button button-outline" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="project-mockup budget-mockup" aria-label="Vista conceptual de la aplicación Presupuesto Mensual">
-          <div class="mockup-bar"><span></span><span></span><span></span></div>
-          <div class="mockup-body">
-            <div class="metric"><small>Balance</small><strong>$12,480</strong></div>
-            <div class="mini-grid"><span>Ingresos</span><span>Gastos</span><b>$18,200</b><b>$5,720</b></div>
-            <div class="fake-chart"><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-        </div>
-      </article>
+        <aside class="hero-aside" aria-label="Áreas de interés">
+          <span class="aside-number" aria-hidden="true">02<span class="aside-dot">.</span></span>
+          <p class="aside-title">PROYECTOS PRINCIPALES</p>
+          <p class="aside-description">Software financiero y una experiencia de pedidos para un negocio real.</p>
+          <div class="aside-divider"></div>
+          <span class="micro">WEB / AUTOMATIZACIÓN / CLOUD</span>
+        </aside>
+      </div>
+      <div class="hero-bottom"><span>Diseño técnico. Desarrollo. Iteración.</span><a href="#proyectos" aria-label="Ir a proyectos">DESLIZA PARA EXPLORAR <span aria-hidden="true">↓</span></a></div>
+    </section>
 
-      <article class="featured-project" aria-labelledby="pastalicious-title">
-        <div class="project-index">02 / DESTACADO</div>
-        <div class="featured-copy">
-          <p class="project-type">WEB · MENÚ DIGITAL · PEDIDOS</p>
-          <h3 id="pastalicious-title">Pastalicious</h3>
-          <p>Menú digital para un negocio de alimentos en Puebla, con promociones, catálogo por categorías y armado de pedidos personalizados con envío del resumen por WhatsApp. Diseñado para consultarse desde el celular.</p>
-          <ul class="tech-list">
-            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Diseño responsive</li><li>Vercel</li>
-          </ul>
-          <div class="project-actions">
-            <a class="button primary" href="https://hecagus-pastalicius-menu.vercel.app/promociones.html" target="_blank" rel="noopener noreferrer">Visitar Pastalicious ↗</a>
-          </div>
-        </div>
-        <div class="project-mockup pasta-mockup" aria-label="Vista conceptual del menú digital de Pastalicious">
-          <div class="mockup-bar"><span></span><span></span><span></span></div>
-          <div class="mockup-body">
-            <div class="pasta-preview-title">PASTALICIOUS <small>Menú digital</small></div>
-            <div class="pasta-preview-promo">PROMO ESPECIAL</div>
-            <div class="pasta-preview-categories">
-              <span>Pastas</span><span>Ensaladas</span><span>Chapatas</span>
+    <section class="section work wrap" id="proyectos" aria-labelledby="projects-title">
+      <div class="section-head">
+        <div><p class="eyebrow">01 — PROYECTOS SELECCIONADOS</p><h2 id="projects-title">Trabajo que <em>existe.</em></h2></div>
+        <p class="head-explainer">No son conceptos de presentación. Son proyectos con código, decisiones técnicas y una aplicación para explorar.</p>
+      </div>
+      <article class="case case-finance" aria-labelledby="budget-title">
+        <div class="case-heading"><div class="case-id">01 / SOFTWARE FINANCIERO</div><span class="case-flag">PROYECTO DESTACADO</span></div>
+        <div class="case-grid">
+          <div class="case-copy">
+            <p class="case-category">PWA / DATOS / SINCRONIZACIÓN</p>
+            <h3 id="budget-title">Presupuesto<br>Mensual<span class="accent-dot">.</span></h3>
+            <p class="case-summary">Una aplicación financiera personal para organizar cuentas, gastos, obligaciones, actividad laboral y metas. El reto no es solo mostrar saldos: también preservar los datos y evitar inconsistencias.</p>
+            <div class="case-detail"><span>PROBLEMA</span><p>Registrar dinero sin duplicar movimientos ni confundir proyecciones con operaciones confirmadas.</p></div>
+            <div class="case-detail"><span>SOLUCIÓN</span><p>PWA con funcionamiento sin conexión, sincronización con Firebase, migraciones y pruebas de regresión.</p></div>
+            <div class="chips"><span>JavaScript</span><span>Firebase / Firestore</span><span>Service Worker</span><span>CI / Tests</span></div>
+            <div class="case-links">
+              <a class="button button-primary" href="https://presupuesto-mensual-jade.vercel.app/index.html" target="_blank" rel="noopener noreferrer">Abrir aplicación <span aria-hidden="true">↗</span></a>
+              <a class="text-action" href="https://github.com/hecagus/PRESUPUESTO-MENSUAL" target="_blank" rel="noopener noreferrer">Examinar código <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="pasta-preview-footer">Selecciona · Personaliza · Pide</div>
+          </div>
+          <div class="case-art finance-art" role="img" aria-label="Diagrama conceptual de los módulos de Presupuesto Mensual; no es una captura de la aplicación">
+            <div class="art-topline"><span>ARQUITECTURA / VISIÓN GENERAL</span><span aria-hidden="true">◉</span></div>
+            <div class="finance-brand"><span class="f-sigil">H<span>+</span></span><div><strong>FINANZAS PERSONALES</strong><small>PWA · OFFLINE-FIRST</small></div></div>
+            <div class="finance-nodes"><div>CUENTAS</div><div>HOGAR</div><div>ACTIVIDAD</div><div>HISTORIAL</div></div>
+            <div class="finance-arrow" aria-hidden="true">↓ &nbsp; MODELO DE DATOS &nbsp; ↓</div>
+            <div class="finance-core"><span>MOTOR FINANCIERO</span><strong>Una fuente de verdad</strong><small>Persistencia · Sincronización · Validaciones</small></div>
+            <p class="art-disclaimer">ESQUEMA ILUSTRATIVO, SIN SALDOS FICTICIOS</p>
           </div>
         </div>
       </article>
 
-      <div class="projects-grid">
-        <article class="project-card">
-          <img src="img/Logopan.png" alt="Panadería de Karla" loading="lazy">
-          <div class="project-card-body">
-            <p class="project-type">WEB · UI</p>
-            <h3>Panadería de Karla</h3>
-            <p>Sitio web orientado a presentación de producto, identidad visual y experiencia responsive.</p>
-            <div class="card-links"><a href="https://hecagus.github.io/Panader-a-/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a><a href="https://github.com/hecagus/Panader-a-" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+      <article class="case case-pasta" aria-labelledby="pasta-title">
+        <div class="case-heading"><div class="case-id">02 / EXPERIENCIA COMERCIAL</div><span class="case-flag">PROYECTO DESTACADO</span></div>
+        <div class="case-grid">
+          <div class="case-copy">
+            <p class="case-category">MENÚ DIGITAL / COMERCIO LOCAL</p>
+            <h3 id="pasta-title">Pastalicious<span class="accent-dot">.</span></h3>
+            <p class="case-summary">Experiencia web para consultar promociones, explorar el menú y preparar pedidos personalizados desde un teléfono, con envío del resumen por WhatsApp.</p>
+            <div class="case-detail"><span>PROBLEMA</span><p>Convertir un menú con combinaciones y extras en un proceso de pedido sencillo.</p></div>
+            <div class="case-detail"><span>SOLUCIÓN</span><p>Interfaz responsive, selección de productos y resumen de pedido listo para enviar.</p></div>
+            <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div>
+            <div class="case-links">
+              <a class="button button-dark" href="https://hecagus-pastalicius-menu.vercel.app/promociones.html" target="_blank" rel="noopener noreferrer">Visitar menú <span aria-hidden="true">↗</span></a>
+              <span class="private-note">El código de este proyecto no es público.</span>
+            </div>
           </div>
-        </article>
+          <div class="case-art pasta-art" role="img" aria-label="Composición editorial conceptual del menú Pastalicious; no es una captura de la web">
+            <div class="art-topline"><span>PASTALICIOUS / MENÚ DIGITAL</span><span>PBLA · MX</span></div>
+            <div class="pasta-hero"><span>PASTA.</span><span>ENSALADAS.</span><em>A TU MANERA.</em></div>
+            <div class="pasta-rule"></div>
+            <div class="pasta-tags"><span>01 / EXPLORA</span><span>02 / PERSONALIZA</span><span>03 / PIDE</span></div>
+            <div class="pasta-bottom"><span>MENÚ<br>INTERACTIVO</span><span class="pasta-symbol" aria-hidden="true">✳</span></div>
+            <p class="art-disclaimer">COMPOSICIÓN CONCEPTUAL DEL PROYECTO</p>
+          </div>
+        </div>
+      </article>
+    </section>
 
-        <article class="project-card">
-          <img src="img/encriptadoor.png" alt="Encriptador de texto" loading="lazy">
-          <div class="project-card-body">
-            <p class="project-type">JAVASCRIPT · LÓGICA</p>
-            <h3>Encriptador de texto</h3>
-            <p>Proyecto de lógica de transformación de texto con interfaz web y manipulación del DOM.</p>
-            <div class="card-links"><a href="https://github.com/hecagus/encriptadoor" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="img/barberhecagus.png" alt="Barbería HecAgus" loading="lazy">
-          <div class="project-card-body">
-            <p class="project-type">WEB · FRONTEND</p>
-            <h3>Barbería HecAgus</h3>
-            <p>Proyecto frontend enfocado en estructura visual, navegación y presentación de servicios.</p>
-            <div class="card-links"><a href="https://github.com/hecagus/barberia" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-          </div>
-        </article>
+    <section class="section approach wrap" id="enfoque">
+      <div class="section-head"><div><p class="eyebrow">02 — ENFOQUE</p><h2>Menos promesas.<br><em>Más criterio.</em></h2></div></div>
+      <div class="principles">
+        <article><span class="principle-n">01</span><h3>Entender el problema</h3><p>Definir qué debe hacer el producto antes de sumar pantallas o funciones.</p></article>
+        <article><span class="principle-n">02</span><h3>Proteger los datos</h3><p>Validaciones, migraciones y consistencia; especialmente cuando hay dinero de por medio.</p></article>
+        <article><span class="principle-n">03</span><h3>Iterar con evidencia</h3><p>Pruebas, revisión del comportamiento real y mejoras que no rompan lo existente.</p></article>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <p class="section-kicker">CONTACTO</p>
-      <h2>¿Tienes una idea, un proyecto o una oportunidad?</h2>
-      <p>Podemos hablar de desarrollo, automatización, soporte técnico o colaboración.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="https://wa.me/528135037076" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WhatsApp ↗</a>
-        <a class="button ghost" href="mailto:hec17tor@gmail.com">Enviar correo</a>
-        <a class="button ghost" href="https://github.com/hecagus" target="_blank" rel="noopener noreferrer">Ver GitHub ↗</a>
+    <section class="section stack wrap" id="tecnologias" aria-labelledby="stack-title">
+      <div class="section-head"><div><p class="eyebrow">03 — HERRAMIENTAS</p><h2 id="stack-title">Mi <em>caja de trabajo.</em></h2></div><p class="head-explainer">Tecnologías utilizadas en proyectos y otras que continúo estudiando. No son certificaciones ni niveles de dominio.</p></div>
+      <div class="stack-rows">
+        <div><span>01 / INTERFAZ</span><p>HTML · CSS · JavaScript · Responsive web</p></div>
+        <div><span>02 / DATOS Y APLICACIONES</span><p>Firebase · Firestore · SQL · Java</p></div>
+        <div><span>03 / OPERACIÓN</span><p>Git · GitHub · CI/CD · PWA · Pruebas</p></div>
+        <div><span>04 / EN FORMACIÓN</span><p>Google Cloud · Arquitectura cloud · Automatización</p></div>
       </div>
+    </section>
+
+    <section class="section archive wrap" aria-labelledby="other-title">
+      <div class="section-head"><div><p class="eyebrow">04 — ARCHIVO</p><h2 id="other-title">Otros <em>ejercicios y proyectos.</em></h2></div></div>
+      <div class="archive-grid">
+        <article><span>01</span><h3>Panadería de Karla</h3><p>Sitio de presentación de productos y experiencia web responsive.</p><div class="archive-links"><a href="https://hecagus.github.io/Panader-a-/" target="_blank" rel="noopener noreferrer">Sitio ↗</a><a href="https://github.com/hecagus/Panader-a-" target="_blank" rel="noopener noreferrer">Código ↗</a></div></article>
+        <article><span>02</span><h3>Encriptador de texto</h3><p>Ejercicio de lógica con JavaScript e interacción con el DOM.</p><div class="archive-links"><a href="https://github.com/hecagus/encriptadoor" target="_blank" rel="noopener noreferrer">Código ↗</a></div></article>
+        <article><span>03</span><h3>Barbería HecAgus</h3><p>Proyecto frontend enfocado en maquetación y navegación.</p><div class="archive-links"><a href="https://github.com/hecagus/barberia" target="_blank" rel="noopener noreferrer">Código ↗</a></div></article>
+      </div>
+    </section>
+
+    <section class="contact section" id="contacto">
+      <div class="wrap contact-inner"><p class="eyebrow">05 — CONTACTO</p><h2>¿Construimos<br><em>algo útil?</em></h2><p>Desarrollo web, mejoras a productos existentes, automatización y colaboración técnica.</p><div class="contact-actions"><a class="button button-primary" href="https://wa.me/528135037076" target="_blank" rel="noopener noreferrer" aria-label="Iniciar conversación por WhatsApp">Hablemos por WhatsApp <span aria-hidden="true">↗</span></a><a class="button button-outline" href="mailto:hec17tor@gmail.com">Enviar correo <span aria-hidden="true">↗</span></a></div></div>
     </section>
   </main>
-
-  <footer>
-    <p>© <span id="year"></span> Héctor Ibáñez · Construido con HTML, CSS y JavaScript.</p>
-  </footer>
+  <footer class="wrap"><span>© <span id="year">2026</span> HÉCTOR IBÁÑEZ</span><span>HECHO CON HTML, CSS Y JAVASCRIPT · <a href="https://github.com/hecagus" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></span></footer>
 </body>
 </html>
