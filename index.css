@@ -114,7 +114,7 @@ h2{font-size:clamp(43px,6.5vw,86px);line-height:1;letter-spacing:-.065em;font-we
 .pi-center small{display:block;font-size:9px;font-weight:850;letter-spacing:.14em;color:#b7c7aa;margin-top:12px}
 .pi-digit-line{font:14px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:2px;white-space:nowrap;overflow:hidden;color:#90a77f;border-block:1px solid #43523b;padding:15px 0;margin-top:22px}
 .pi-digit-line span{color:#1a2215;background:var(--accent);padding:4px 0}
-.pi-art-copy{font-size:clamp(34px,4vw,59px);font-weight:850;line-height:1;letter-spacing:-.065em;margin:28px 0 24px}
+.pi-art-copy{font-size:clamp(31px,3vw,43px);font-weight:850;line-height:1.08;letter-spacing:-.055em;margin:28px 0 24px}
 .pi-art-copy em{font-family:Georgia,Times,serif;font-style:normal;font-weight:400;color:var(--accent)}
 .pi-worlds{display:flex;flex-wrap:wrap;gap:7px}
 .pi-worlds span{padding:7px 9px;border:1px solid #516248;color:#c7d9b7;font-size:8px;font-weight:850;letter-spacing:.08em}
