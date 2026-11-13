@@ -37,7 +37,7 @@ h1 em,h2 em,.contact h2 em{font-style:normal;font-family:Georgia,Times,serif;fon
 .button:hover{transform:translateY(-3px)}
 .button-primary{background:var(--accent);color:var(--ink)}
 .button-primary:hover{background:#e6ffad}
-.button-outline{border-color:#57585d;background:transparent;color:var(--white)}
+.button-outline{border-color:#767980;background:transparent;color:var(--white)}
 .button-outline:hover{background:#27292e}
 .button-dark{background:var(--ink);color:var(--white)}
 .button-dark:hover{background:#35322c}
@@ -78,13 +78,13 @@ h2{font-size:clamp(43px,6.5vw,86px);line-height:1;letter-spacing:-.065em;font-we
 .case-art{min-width:0;position:relative;display:flex;flex-direction:column;overflow:hidden;padding:24px}
 .art-topline{display:flex;justify-content:space-between;gap:12px;font-size:9px;letter-spacing:.12em;font-weight:900}
 .finance-art{background:#e3e8dd;color:#1c231e}
-.finance-art .art-topline{color:#64776c}
+.finance-art .art-topline{color:#485a4f}
 .finance-brand{display:flex;align-items:center;gap:15px;margin-top:45px}
 .f-sigil{width:62px;height:62px;border-radius:14px;background:#192b27;color:#e0ff8b;display:grid;place-items:center;font-size:28px;font-weight:900}
 .f-sigil span{color:#7cbba6}
 .finance-brand strong,.finance-brand small{display:block}
 .finance-brand strong{font-size:13px;letter-spacing:.07em}
-.finance-brand small{font-size:10px;margin-top:5px;color:#66746d}
+.finance-brand small{font-size:10px;margin-top:5px;color:#4a594c}
 .finance-nodes{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:55px}
 .finance-nodes div{padding:19px 12px;border:1px solid #c8d1c9;background:#f5f7ef;font-size:12px;font-weight:850;letter-spacing:.1em;min-height:72px;display:flex;align-items:center}
 .finance-arrow{text-align:center;font-size:10px;letter-spacing:.12em;color:#66796c;font-weight:900;padding:20px 0}
@@ -93,7 +93,7 @@ h2{font-size:clamp(43px,6.5vw,86px);line-height:1;letter-spacing:-.065em;font-we
 .finance-core strong{font-size:23px;letter-spacing:-.035em;line-height:1.2;margin-top:7px}
 .finance-core small{font-size:11px;margin-top:10px;color:#aabcb2}
 .art-disclaimer{font-size:9px;letter-spacing:.08em;font-weight:800;margin:auto 0 0;padding-top:27px}
-.finance-art .art-disclaimer{color:#7e8c80}
+.finance-art .art-disclaimer{color:#4a594c}
 .pasta-art{background:#f2cb59;color:#2d2514}
 .pasta-art .art-topline{color:#594e30}
 .pasta-hero{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin-top:71px;font-size:clamp(40px,5vw,77px);line-height:.93;font-weight:1000;letter-spacing:-.08em}
@@ -104,7 +104,7 @@ h2{font-size:clamp(43px,6.5vw,86px);line-height:1;letter-spacing:-.065em;font-we
 .pasta-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:40px}
 .pasta-bottom>span:first-child{font-size:22px;font-weight:900;line-height:1.05;letter-spacing:-.05em}
 .pasta-symbol{font-size:112px;line-height:1}
-.pasta-art .art-disclaimer{color:#695832}
+.pasta-art .art-disclaimer{color:#5a4b2a}
 .pi-art{background:#182018;color:#e9f0e1;isolation:isolate}
 .pi-art::before{content:"";position:absolute;width:370px;height:370px;top:55px;left:50%;transform:translateX(-50%);border:1px solid #546944;border-radius:50%;box-shadow:0 0 0 35px #b4e57b05,0 0 0 70px #b4e57b04;z-index:-1}
 .pi-art .art-topline{color:#abbba0}
@@ -143,7 +143,7 @@ h2{font-size:clamp(43px,6.5vw,86px);line-height:1;letter-spacing:-.065em;font-we
 .archive-links a:hover{color:var(--accent)}
 .archive-grid .private-note{margin-top:auto;margin-bottom:0}
 .contact{background:var(--paper);color:var(--ink);padding-block:115px}
-.contact .eyebrow{color:#647d1c}
+.contact .eyebrow{color:#4d6313}
 .contact h2{font-size:clamp(68px,10vw,140px);line-height:.9}
 .contact h2 em{color:#566f12}
 .contact-inner>p:not(.eyebrow){max-width:510px;color:#4a4a49;margin-top:28px;font-size:16px}
