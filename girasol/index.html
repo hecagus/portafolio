@@ -282,13 +282,14 @@
     button.textContent = '✨ Preparando tu detalle…';
     hint.textContent = '';
     scene.setAttribute('aria-label', 'Ramo de girasoles apareciendo uno por uno y luego envolviéndose');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     finishTimer = setTimeout(() => {
       title.textContent = 'Un ramo de girasoles para ti, mi niña de ojos hermosos 🌻';
       message.textContent = 'Un detalle hecho con cariño del HecAgus, porque pensé en ti.';
       button.textContent = '↻ Ver otra vez';
       button.disabled = false;
       running = false;
-    }, 6400);
+    }, prefersReducedMotion ? 50 : 6400);
   }
   function reset(){
     clearTimeout(finishTimer);
